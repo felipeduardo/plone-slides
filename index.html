@@ -5,11 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=1024, user-scalable=no">
 
-	<title>Your deck.js Presentation</title>
-	
+	<title>Apresentação do Plone</title>
+
 	<!-- Required stylesheet -->
 	<link rel="stylesheet" href="core/deck.core.css">
-	
+
 	<!-- Extension CSS files go here. Remove or add as needed. -->
 	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
 	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
@@ -20,16 +20,31 @@
 
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
 	<link rel="stylesheet" href="themes/style/web-2.0.css">
-	
+
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
-	
+
 	<!-- Required Modernizr file -->
 	<script src="modernizr.custom.js"></script>
 </head>
 <body class="deck-container">
 
 <!-- Begin slides. Just make elements with a class of slide. -->
+
+<header>
+            <div class="panel panel-dark">
+                <img src="./img/plone-logo-192.png" class="logo" alt="Logomarca do Plone - Três circulos da cor azul envolvidos por um circulo maior de borda azul">
+                <h1 class="element-invisible">Plone</h1>
+            </div>
+            <h2>Apresentação sobre o CMS Plone</h2>
+            <p>by Felipe Duardo<br>
+            <a href="http://twitter.com/ofelipeduardo" class="twitter-follow-button" data-show-count="false" data-size="large">Seguir @ofelipeduardo</a></p>
+
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+            <p>Código fonte da apresentação <a href="http://github.com/felipeduardo/plone-slides">github.com/felipeduardo/plone-slides</a></p>
+
+        </header>
 
 <section class="slide">
 	<h1>Slide</h1>
@@ -78,13 +93,12 @@
 <script src="core/deck.core.js"></script>
 
 <!-- Extension JS files. Add or remove as needed. -->
-<script src="../core/deck.core.js"></script>
-<script src="../extensions/hash/deck.hash.js"></script>
-<script src="../extensions/menu/deck.menu.js"></script>
-<script src="../extensions/goto/deck.goto.js"></script>
-<script src="../extensions/status/deck.status.js"></script>
-<script src="../extensions/navigation/deck.navigation.js"></script>
-<script src="../extensions/scale/deck.scale.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
