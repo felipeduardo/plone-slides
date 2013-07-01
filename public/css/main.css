@@ -39,7 +39,7 @@ a {
     color: #427597;
     font-weight: 700;
 }
-a:hover, a:active, a:visited { color: #75ad0a; }
+a:hover, a:active { color: #75ad0a; }
 ul {
     list-style: none;
     padding: 0;
