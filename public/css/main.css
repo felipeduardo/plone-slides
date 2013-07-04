@@ -108,13 +108,12 @@ ul {
 .btn-control {
   width: 120px;
   height: 30px;
-  margin: 0 5px;
+  margin: 0 auto;
   display: block;
   border-radius: 5px;
   line-height: 30px;
   background: #75ad0a;
   color: #fff;
-  float: left
 }
 .btn-control:hover {
   background: #427597;
@@ -123,7 +122,7 @@ ul {
 }
 .deck-example {
   margin-bottom: 5px;
-
+  text-align: center;
 }
 .deck-example h4 { margin-bottom: 10px; }
 .btn:hover,
