@@ -256,6 +256,7 @@ h1, h2, h3 {
 }
 .upcase { text-transform: uppercase; }
 .center { text-align: center; }
+.right { text-align: right; }
 .element-invisible {
   height: 1px;
   position: absolute !important;
