@@ -1047,6 +1047,193 @@ O valor de i é 65536</code></pre>
 
 <section class="slide">
   <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando if</h2>
+  <ul>
+      <li>
+          <h3>Provavelmente o mais conhecido comando de controle de fluxo é o if. Por exemplo:</h3>
+          <pre><code class="python">>>> x = int(raw_input("Favor digitar um inteiro: "))
+Favor digitar um inteiro: 42
+>>> if x < 0:
+...      x = 0
+...      print 'Negativo alterado para zero'
+... elif x == 0:
+...      print 'Zero'
+... elif x == 1:
+...      print 'Unidade'
+... else:
+...      print 'Mais'
+...
+Mais</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Pode haver zero ou mais seções elif, e a seção else é opcional. A palavra-chave elif é uma abreviação para ‘else if’, e é útil para evitar indentação excessiva. Uma sequência if ... elif ... elif ... substitui as construções switch ou case existentes em outras linguagens.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando for</h2>
+  <ul>
+      <li>
+          <h3>O comando for em Python difere um tanto do que você talvez esteja acostumado em C ou Pascal. Ao invés de se iterar sobre progressões aritméticas (como em Pascal), ou dar ao usuário o poder de definir tanto o passo da iteração quanto a condição de parada (como em C), o comando for de Python itera sobre os itens de qualquer sequência (como uma lista ou uma string), na ordem em que eles aparecem na sequência. Por exemplo:</h3>
+          <pre><code class="python">>>> # Medir o tamanho de algumas strings:
+>>> a = ['gato', 'janela', 'defenestrar']
+>>> for x in a:
+...     print x, len(x)
+...
+gato 4
+janela 6
+defenestrar 11
+>>></code></pre>
+      </li>
+      <li class="slide">
+          <h3>Não é seguro modificar a sequência sobre a qual se baseia o laço de iteração (isto pode acontecer se a sequência for mutável, isto é, uma lista). Se você precisar modificar a lista sobre a qual está iterando (por exemplo, para duplicar itens selecionados), você deve iterar sobre uma cópia da lista ao invés da própria. A notação de fatiamento é bastante conveniente para isso:</h3>
+          <pre><code class="python">>>> for x in a[:]: # fazer uma cópia da lista inteira
+...    if len(x) > 6: a.insert(0, x)
+...
+>>> a
+['defenestrar', 'gato', 'janela', 'defenestrar']</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">A função range()</h2>
+  <ul>
+      <li>
+          <h3>Se você precisar iterar sobre sequências numéricas, a função embutida range() é a resposta. Ela gera listas contendo progressões aritméticas, por exemplo:</h3>
+          <pre><code class="python">>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>O ponto de parada fornecido nunca é incluído na lista; range(10) gera uma lista com 10 valores, exatamente os índices válidos para uma sequência de comprimento 10. É possível iniciar o intervalo em outro número, ou alterar a razão da progressão (inclusive com passo negativo):</h3>
+          <pre><code class="python">>>> range(5, 10)
+[5, 6, 7, 8, 9]
+>>> range(0, 10, 3)
+[0, 3, 6, 9]
+>>> range(-10, -100, -30)
+[-10, -40, -70]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">A função range()</h2>
+  <ul>
+      <li>
+          <h3>Para iterar sobre os índices de uma sequência, combine range() e len() da seguinte forma:</h3>
+          <pre><code class="python">>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print i, a[i]
+...
+0 Mary
+1 had
+2 a
+3 little
+4 lamb</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Na maioria dos casos como este, porém, é mais conveniente usar a função enumerate(), veja <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tut-loopidioms" target="_blank">Técnicas de iteração</a>.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comandos break e continue, e cláusulas else em laços</h2>
+  <ul>
+      <li>
+          <h3>O comando break, como em C, interrompe o laço for ou while mais interno.</h3>
+      </li>
+      <li class="slide">
+          <h3>O comando continue, também emprestado de C, avança para a próxima iteração do laço mais interno.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comandos break e continue, e cláusulas else em laços</h2>
+  <ul>
+      <li>
+          <h3>Laços podem ter uma cláusula else, que é executada sempre que o laço se encerra por exaustão da lista (no caso do for) ou quando a condição se torna falsa (no caso do while), mas nunca quando o laço é interrompido por um break. Isto é exemplificado no próximo exemplo que procura números primos:</h3>
+          <pre><code class="python">>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print n, '=', x, '*', n/x
+...             break
+...     else:
+...         # laço terminou sem encontrar um fator
+...         print n, 'é um número primo'
+...
+2 é um número primo
+3 é um número primo
+4 = 2 * 2
+5 é um número primo
+6 = 2 * 3
+7 é um número primo
+8 = 2 * 4
+9 = 3 * 3</code></pre>
+      </li>
+      <li class="slide">
+          <h3>(Sim, este é o código correto. Olhe atentamente: a cláusula else pertence ao laço for, e não ao comando if.)</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>O comando pass não faz nada. Ela pode ser usada quando a sintaxe exige um comando mas a semântica do programa não requer nenhuma ação. Por exemplo:</h3>
+          <pre><code class="python">>>> while True:
+...     pass  # esperar interrupção via teclado (Ctrl+C)
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>Isto é usado muitas vezes para se definir classes mínimas:</h3>
+          <pre><code class="python">>>> class MinhaClasseVazia:
+...     pass
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>Outra situação em que pass pode ser usado é para reservar o lugar de uma função ou de um bloco condicional, quando você está trabalhando em código novo, o que lhe possibilita continuar a raciocinar em um nível mais abstrato. O comando pass é ignorado silenciosamente:</h3>
+          <pre><code class="python">>>> def initlog(*args):
+...     pass   # Lembrar de implementar isto!
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
   <h2 class="center"></h2>
   <ul>
       <li>
