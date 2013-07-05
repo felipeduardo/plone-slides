@@ -21,11 +21,11 @@
   <!-- Style theme Plone. -->
   <link rel="stylesheet" href="themes/style/plone.css">
 
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="/css/highlightjs/monokai.css">
+
   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
   <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
-
-  <!-- Required Modernizr file -->
-  <script src="modernizr.custom.js"></script>
 </head>
 <body class="deck-container">
 
@@ -59,6 +59,43 @@
       <li class="slide"><h3>Nome em homenagem ao grupo de comediantes Monty Python</h3></li>
       <li class="slide"><h3>Usado por grandes empresas (Google, Youtube, Nasa, LucasArts)</h3></li>
   </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2>Zen do python:</h2>
+  <pre>
+      <code>
+$ ipython
+      </code>
+  </pre>
+  <pre>
+      <code>
+In [1]: import this
+      </code>
+  </pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2>Teste Highlight.js:</h2>
+  <div class="highlight">
+      <pre>
+          <code class="python">
+class Teste(object):
+    """Documentação da classe teste
+    """
+    def __init__(self):
+        """Documentação do método construtor
+           Parâmetros:
+           self: referência a instancia atual
+        """
+        pass
+          </code>
+      </pre>
+  </div>
 </section>
 
 
@@ -434,6 +471,10 @@
 <!-- deck.hash snippet -->
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
+
+<!-- Required Modernizr file -->
+<script src="modernizr.custom.js"></script>
+
 <!-- Required JS files. -->
 <script src="jquery-1.7.2.min.js"></script>
 <script src="core/deck.core.js"></script>
@@ -456,6 +497,10 @@
 <!-- controldeck.js -->
 <script src="/socket.io/socket.io.js"></script>
 <script src="/controldeck-slides.js"></script>
+
+<!-- Highlight.js -->
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
