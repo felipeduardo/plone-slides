@@ -256,7 +256,6 @@ h1, h2, h3 {
 }
 .upcase { text-transform: uppercase; }
 .center { text-align: center; }
-.right { text-align: right; }
 .element-invisible {
   height: 1px;
   position: absolute !important;
@@ -280,4 +279,8 @@ h1, h2, h3 {
 }
 .deck-container > .slide {
     text-shadow: none;
+}
+.half {
+    float: left;
+    width: 50%;
 }
