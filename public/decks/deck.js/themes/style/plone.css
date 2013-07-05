@@ -263,3 +263,17 @@ h1, h2, h3 {
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 }
+.logo-python {
+  width: 750px;
+  margin: 20px 0;
+}
+.logo-python-64 {
+  width: 307px;
+  height: 90px;
+  margin: 20px 0 !important;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url(/img/python-logo-generic.svg) no-repeat;
+  background-size: 100%;
+}
