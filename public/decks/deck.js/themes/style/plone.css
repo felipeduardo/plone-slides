@@ -277,7 +277,7 @@ h1, h2, h3 {
   background: url(/img/python-logo-generic.svg) no-repeat;
   background-size: 100%;
 }
-.deck-container > .slide {
+.deck-container > .slide pre {
     text-shadow: none;
 }
 .half {

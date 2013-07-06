@@ -1234,13 +1234,135 @@ defenestrar 11
 
 <section class="slide">
   <h2 class="logo-python-64">Python</h2>
-  <h2 class="center"></h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li class="slide">
+              <h3>A palavra reservada def inicia a definição de uma função. Ela deve ser seguida do nome da função e da lista de parâmetros formais entre parênteses. Os comandos que formam o corpo da função começam na linha seguinte e devem ser indentados.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Opcionalmente, a primeira linha lógica do corpo da função pode ser uma string literal, cujo propósito é documentar a função. Se presente, essa string chama-se docstring. (Há mais informação sobre docstrings na seção Strings de documentação.) Existem ferramentas que utilizam docstrings para produzir automaticamente documentação online ou para imprimir, ou ainda permitir que o usuário navegue interativamente pelo código. É uma boa prática incluir sempre docstrings em suas funções, portanto, tente fazer disto um hábito.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>A execução de uma função gera uma nova tabela de símbolos, usada para as variáveis locais da função. Mais precisamente, toda atribuição a variável dentro da função armazena o valor na tabela de símbolos local. Referências a variáveis são buscadas primeiramente na tabela local, então na tabela de símbolos global e finalmente na tabela de nomes embutidos (built-in). Portanto, não se pode atribuir diretamente um valor a uma variável global dentro de uma função (a menos que se utilize a declaração global antes), ainda que variáveis globais possam ser referenciadas livremente.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Os parâmetros reais (argumentos) de uma chamada de função são introduzidos na tabela de símbolos local da função no momento da invocação, portanto, argumentos são passados por valor (onde o valor é sempre uma referência para objeto, não o valor do objeto). [1] Quando uma função invoca outra, uma nova tabela de símbolos é criada para tal chamada.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
   <ul>
       <li>
-          <h3></h3>
-          <pre><code class="python">
-
-          </code></pre>
+          <h3>Uma definição de função introduz o nome da função na tabela de símbolos atual. O valor associado ao nome da função tem um tipo que é reconhecido pelo interpretador como uma função definida pelo usuário. Esse valor pode ser atribuído a outros nomes que também podem ser usados como funções. Esse mecanismo serve para renomear funções:</h3>
+          <pre><code class="python">>>> fib
+<function fib at 10042ed0>
+>>> f = fib
+>>> f(100)
+0 1 1 2 3 5 8 13 21 34 55 89</code></pre>
       </li>
   </ul>
 </section>
@@ -1248,35 +1370,482 @@ defenestrar 11
 
 <section class="slide">
   <h2 class="logo-python-64">Python</h2>
-  <h2 class="center"></h2>
+  <h2 class="center">Definindo Funções</h2>
   <ul>
       <li>
-          <h3></h3>
-          <pre><code class="python">
-
-          </code></pre>
+          <h3>Conhecendo outras linguagens, você pode questionar que fib não é uma função, mas um procedimento, pois ela não devolve um valor. Na verdade, mesmo funções que não usam o comando return devolvem um valor, ainda que pouco interessante. Esse valor é chamado None (é um nome embutido). O interpretador interativo evita escrever None quando ele é o único resultado de uma expressão. Mas se quiser vê-lo pode usar o comando print:</h3>
+          <pre><code class="python">>>> fib(0)
+>>> print fib(0)
+None</code></pre>
       </li>
   </ul>
 </section>
 
 
-
-
-
-
-
-
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <ul>
+      <li>
+          <h3>É fácil escrever uma função que devolve uma lista de números série de Fibonacci, ao invés de exibi-los:</h3>
+          <pre><code class="python">>>> def fib2(n): # devolve a série de Fibonacci até n
+...     """Devolve uma lista a com série de Fibonacci até n."""
+...     resultado = []
+...     a, b = 0, 1
+...     while a < n:
+...         resultado.append(a)    # veja mais adiante
+...         a, b = b, a+b
+...     return resultado
+...
+>>> f100 = fib2(100)    # executar
+>>> f100                # exibir o resultado
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</code></pre>
+      </li>
+  </ul>
+</section>
 
 
 <section class="slide">
   <h2 class="logo-python-64">Python</h2>
-  <h2 class="center"></h2>
+  <h2 class="center">Definindo Funções</h2>
+  <h3>Este exemplo, como sempre, demonstra algumas características novas:</h3>
+  <ul>
+      <li class="slide">
+          <h3>O comando return termina a função devolvendo um valor. Se não houver uma expressão após o return, o valor None é devolvido. Se a função chegar ao fim sem o uso explícito do return, então também será devolvido o valor None.</h3>
+      </li>
+      <li class="slide">
+          <h3>O trecho resultado.append(a) invoca um método do objeto lista resultado. Um método é uma função que “pertence” a um objeto e é chamada através de obj.nome_do_metodo onde obj é um objeto qualquer (pode ser uma expressão), e nome_do_metodo é o nome de um método que foi definido pelo tipo do objeto. Tipos diferentes definem métodos diferentes. Métodos de diferentes tipos podem ter o mesmo nome sem ambiguidade. (É possível definir seus próprios tipos de objetos e métodos, utilizando classes, veja em Classes) O método append() mostrado no exemplo é definido para objetos do tipo lista; ele adiciona um novo elemento ao final da lista. Neste exemplo, ele equivale a resultado = resultado + [a], só que mais eficiente.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>A mais útil das três é especificar um valor default para um ou mais parâmetros formais. Isso cria uma função que pode ser invocada com um número menor de argumentos do que ela pode receber. Por exemplo:</h3>
+              <pre><code class="python">def confirmar(pergunta, tentativas=4, reclamacao='Sim ou não, por favor!'):
+    while True:
+        ok = raw_input(pergunta).lower()
+        if ok in ('s', 'si', 'sim'):
+            return True
+        if ok in ('n', 'no', 'não', 'nananinanão'):
+            return False
+        tentativas = tentativas - 1
+        if tentativas == 0:
+            raise IOError('usuario nao quer cooperar')
+        print reclamacao</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <h3 class="slide">Essa função pode ser invocada de várias formas:</h3>
+      <ul>
+          <li class="slide">
+              <h3>fornecendo apenas o argumento obrigatório: confirmar('Deseja mesmo encerrar?')</h3>
+          </li>
+          <li class="slide">
+              <h3>fornecendo um dos argumentos opcionais: confirmar('Sobrescrever o arquivo?', 2)</h3>
+          </li>
+          <li class="slide">
+              <h3>ou fornecendo todos os argumentos: confirmar('Sobrescrever o arquivo?', 2, 'Escolha apenas s ou n')</h3>
+          </li>
+      </ul>
+      <h3 class="slide">Este exemplo também introduz o operador in, que verifica se uma sequência contém ou não um determinado valor.</h3>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
   <ul>
       <li>
-          <h3></h3>
-          <pre><code class="python">
+          <h3>Os valores default são avaliados no momento a definição da função, e no escopo em que a função foi definida, portanto:</h3>
+          <pre><code class="python">i = 5
 
-          </code></pre>
+def f(arg=i):
+    print arg
+
+i = 6
+f()</code></pre>
+      </li>
+      <li class="slide">
+          <h3>irá exibir 5.</h3>
+      </li>
+      <li class="slide">
+          <h3>Aviso importante: Valores default são avaliados apenas uma vez. Isso faz diferença quando o valor default é um objeto mutável como uma lista ou dicionário (N.d.T. dicionários são como arrays associativos ou HashMaps em outras linguagens; ver Dicionários).</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Por exemplo, a função a seguir acumula os argumentos passados em chamadas subsequentes:</h3>
+              <pre><code class="python">def f(a, L=[]):
+    L.append(a)
+    return L
+
+print f(1)
+print f(2)
+print f(3)</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li class="slide">
+              <h3>Esse código vai exibir:</h3>
+              <pre><code class="python">[1]
+[1, 2]
+[1, 2, 3]</code></pre>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <ul>
+      <li>
+          <h3>Se você não quiser que o valor default seja compartilhado entre chamadas subsequentes, pode reescrever a função assim:</h3>
+          <pre><code class="python">def f(a, L=None):
+    if L is None:
+        L = []
+    L.append(a)
+    return L</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#listas-arbitrarias-de-argumentos" target="_blank">Listas arbitrárias de argumentos</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#desempacotando-listas-de-argumentos" target="_blank">Desempacotando listas de argumentos¶</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#construcoes-lambda" target="_blank">Construções lambda</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#mais-sobre-listas" target="_blank">Mais sobre listas</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#usando-listas-como-pilhas" target="_blank">Usando listas como pilhas¶</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#usando-listas-como-filas" target="_blank">Usando listas como filas</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#ferramentas-de-programacao-funcional" target="_blank">Ferramentas de programação funcional</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Uma list comprehension é uma maneira concisa de construir uma lista preenchida. (N.d.T. literalmente, abrangência de lista mas no Brasil o termo em inglês é muito usado; também se usa a abreviação listcomp)</h3>
+      </li>
+      <li class="slide">
+          <h3>Um uso comum é construir uma nova lista onde cada elemento é o resultado de alguma expressão aplicada a cada membro de outra sequência ou iterável, ou para construir uma subsequência cujos elementos satisfazem uma certa condição.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Por exemplo, suponha que queremos criar uma lista de quadrados, assim:</h3>
+          <pre><code class="python">>>> quadrados = []
+>>> for x in range(10):
+...     quadrados.append(x**2)
+...
+>>> quadrados
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Podemos obter o mesmo resultado desta forma:</h3>
+          <pre><code class="python">quadrados = [x**2 for x in range(10)]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Por exemplo, esta listcomp combina os elementos de duas listas quando eles são diferentes:</h3>
+          <pre><code class="python">>>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Isto equivale a:</h3>
+          <pre><code class="python">>>> combs = []
+>>> for x in [1,2,3]:
+...     for y in [3,1,4]:
+...         if x != y:
+...             combs.append((x, y))
+...
+>>> combs
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#list-comprehensions-ou-abrangencias-de-listas" target="_blank">List comprehensions ou abrangências de listas</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#listcomps-aninhadas" target="_blank">Listcomps aninhadas</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#o-comando-del" target="_blank">O comando del</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tuplas-e-sequencias" target="_blank">Tuplas e sequências</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#sets-conjuntos" target="_blank">Sets (conjuntos)</a></h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicionários</h2>
+  <ul>
+      <li>
+          <h3>Um bom modelo mental é imaginar um dicionário como um conjunto não ordenado de pares chave-valor, onde as chaves são únicas em uma dada instância do dicionário. Dicionários são delimitados por chaves: {}, e contém uma lista de pares chave:valor separada por vírgulas. Dessa forma também será exibido o conteúdo de um dicionário no console do Python. O dicionário vazio é {}.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicionários</h2>
+  <ul>
+      <li>
+          <h3>A seguir, um exemplo de uso do dicionário:</h3>
+          <pre><code class="python">>>> tel = {'jack': 4098, 'sape': 4139}
+>>> tel['guido'] = 4127
+>>> tel
+{'sape': 4139, 'guido': 4127, 'jack': 4098}
+>>> tel['jack']
+4098
+>>> del tel['sape']
+>>> tel['irv'] = 4127
+>>> tel
+{'guido': 4127, 'irv': 4127, 'jack': 4098}
+>>> tel.keys()
+['guido', 'irv', 'jack']
+>>> 'guido' in tel
+True</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#dicionarios" target="_blank">Dicionários</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Ao percorrer um dicionário em um laço, a variável de iteração receberá uma chave de cada vez:</h3>
+          <pre><code class="python">>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k in knights:
+...     print k
+...
+gallahad
+robin</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Quando conveniente, a chave e o valor correspondente podem ser obtidos simultaneamente com o método iteritems().</h3>
+          <pre><code class="python">>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k, v in knights.iteritems():
+...     print k, v
+...
+gallahad the pure
+robin the brave</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Ao percorrer uma sequência qualquer, o índice da posição atual e o valor correspondente podem ser obtidos simultaneamente usando a função enumerate():</h3>
+          <pre><code class="python">>>> for i, v in enumerate(['tic', 'tac', 'toe']):
+...     print i, v
+...
+0 tic
+1 tac
+2 toe</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Para percorrer uma sequência em ordem inversa, chame a função reversed() com a sequência na ordem original.</h3>
+          <pre><code class="python">>>> for i in reversed(xrange(1,10,2)):
+...     print i
+...
+9
+7
+5
+3
+1</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Para percorrer uma sequência de maneira ordenada, use a função sorted(), que retorna uma lista ordenada com os itens, mantendo a sequência original inalterada.</h3>
+          <pre><code class="python">>>> cesta = ['uva', 'laranja', 'uva', 'abacaxi', 'laranja', 'banana']
+>>> for fruta in sorted(cesta):
+...     print fruta
+...
+abacaxi
+banana
+laranja
+laranja
+uva
+uva
+>>> for fruta in sorted(set(cesta)):  # sem duplicações
+...     print fruta
+...
+abacaxi
+banana
+laranja
+uva
+>>></code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tecnicas-de-iteracao" target="_blank">Técnicas de iteração</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#mais-sobre-condicoes" target="_blank">Mais sobre condições</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#comparando-sequencias-e-outros-tipos" target="_blank">Comparando sequências e outros tipos</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Módulos</h2>
+  <ul>
+      <li class="slide">
+          <h3>Exemplo SQLAlchemy</h3>
+      </li>
+      <li class="slide">
+          <pre><code class="python">import escola</code></pre>
+      </li>
+      <li class="slide">
+          <pre><code class="python">from escola import Aluno, Classe</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/modules.html" target="_blank">Módulos</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos NÃO tão extras :)</h2>
+  <ul>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/inputoutput.html" target="_blank">Entrada e saída</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/errors.html" target="_blank">Erros e exceções</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/classes.html" target="_blank">Classes</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/stdlib.html" target="_blank">Um breve passeio pela biblioteca padrão</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/stdlib2.html" target="_blank">Um breve passeio pela biblioteca padrão — parte II</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/whatnow.html" target="_blank">E agora?</a></h3>
       </li>
   </ul>
 </section>
