@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Introdução ao Plone</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme Plone. -->
+  <link rel="stylesheet" href="themes/style/plone.css">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="/css/highlightjs/idea.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+</head>
+<body class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+  <h1><img src="/img/python-logo-generic.svg" class="logo-python" alt="Logomarca do Python - Duas cobras dispostas de forma simétrica, uma azul e a outra amarela" /></h1>
+</section>
+
+
+<section class="slide">
+  <div class="center">
+    <h1>Minicurso de Python</h1>
+    <h2></h2>
+    <p>by Rodrigo Ferreira de Souza <br/>
+    <a href="http://twitter.com/rodfersou" class="twitter-follow-button" data-show-count="false" data-size="large">Seguir @rodfersou</a><br/>
+    rodfersou@gmail.com</p>
+  </div>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Curiosidades</h2>
+  <ul>
+      <li class="slide"><h3>Criado por Guido van Rossum (Holandês)</h3></li>
+      <li class="slide"><h3>Primeira aparição em 1991 (mais antigo que Java - 1995)</h3></li>
+      <li class="slide"><h3>Mantido pela Python Software Foundation</h3></li>
+      <li class="slide"><h3>Nome em homenagem ao grupo de comediantes Monty Python</h3></li>
+      <li class="slide"><h3>Usado por grandes empresas (Google, Youtube, Nasa, LucasArts)</h3></li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Zen do python</h2>
+  <pre><code class="bash">$ ipython</code></pre>
+  <pre><code><a href="http://ark4n.wordpress.com/2009/05/25/pyctoria-5-o-zen-do-python/" target="_blank">In [1]: import this</a></code></pre>
+  <h2 class="slide center">Python é a linguagem que cabe no seu cérebro - Guido van Russel</h2>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">O Python é</h2>
+  <ul>
+      <li class="slide"><h3>Linguagem interpretada - Workflow rápido</h3></li>
+      <li class="slide"><h3>Tipagem dinâmica - Dispensa declaração de variáveis</h3></li>
+      <li class="slide"><h3>Controle de bloco por indentação - Ausência de delimitadores de inicio/fim de código</h3></li>
+      <li class="slide"><h3>Tipos de alto nível - Tuplas, Listas, Dicionários</h3></li>
+      <li class="slide"><h3>Orientação a objetos</h3></li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Com Python voce pode programar</h2>
+  <ul>
+      <li class="slide"><h3>Procedural</h3></li>
+      <li class="slide"><h3>Orientado a objetos</h3></li>
+      <li class="slide"><h3>Funcional</h3></li>
+      <li class="slide"><h3>Orientada a aspectos</h3></li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Python é utilizado para</h2>
+  <ul>
+      <li class="slide"><h3>Automatizar gerenciamento de servidores</h3></li>
+      <li class="slide"><h3>Aplicações modo texto (TERMINAL PURO, CURSES)</h3></li>
+      <li class="slide"><h3>Aplicações desktop (TK, WXWIDGETS, GTK, QT, KIVY, ...)</h3></li>
+      <li class="slide"><h3>Aplicações comerciais (ERPs, CRMs)</h3></li>
+      <li class="slide"><h3>Automação (ARDUINO)</h3></li>
+      <li class="slide"><h3>Aplicações Web (DJANGO, FLASK, WEB2PY, TURBOGEARS, PYRAMID, ...)</h3></li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Interpretador interativo</h2>
+  <img src="/img/interpretador-python.png" alt="Imagem do interpretador do Python" />
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Scripts executáveis</h2>
+  <ul>
+      <li class="slide"><h3>Abra um editor de textos (Emacs ou SublimeText2)</h3></li>
+      <li class="slide"><h3>Crie o arquivo ex01.py</h3></li>
+      <li class="slide">
+          <h3>Insira o código:</h3>
+          <pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+if __name__ == '__main__':
+    print('hello world')
+</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Torne o arquivo executável:</h3>
+          <pre><code class="bash">$ chmod +x ex01.py</code></pre>
+      </li>
+      </li>
+      <li class="slide">
+          <h3>Execute o programa:</h3>
+          <pre><code class="bash">$ ./ex01.py</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center"><a href="http://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8 - Guia de Estilos do Código Python</a></h2>
+  <ul>
+      <li class="slide"><h3>Importante para se inserir na comunidade</h3></li>
+      <li class="slide"><h3>Após acostumado voce entende mais fácil e rápido código dos outros</h3></li>
+      <li class="slide"><h3>Use com moderação</h3></li>
+      <li class="slide"><h3><a href="http://www.python.org/dev/peps/" target="_blank">Lista de Propostas (PEPs)</a></h3></li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comentários</h2>
+  <pre><code class="python"># este é o primeiro comentário
+SPAM = 1                 # e este é o segundo comentário
+                         # ... e agora um terceiro!
+STRING = "# Isto não é um comentário."</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Usando Python como uma calculadora</h2>
+  <h3 class="center">Números</h3>
+  <pre><code class="python">>>> 2+2
+4
+>>> # Isto é um comentário
+... 2+2
+4
+>>> 2+2  # em um comentário na mesma linha do código
+4
+>>> (50-5*6)/4
+5
+>>> # A divisão entre inteiros arredonda para baixo:
+... 7/3
+2
+>>> 7/-3
+-3</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Criação de variáveis</h2>
+  <pre><code class="python">>>> largura = 20
+>>> algura = 5*9
+>>> largura * altura
+900</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Criação de variáveis</h2>
+  <ul>
+      <li>
+          <h3>Um valor pode ser atribuído a diversas variáveis simultaneamente:</h3>
+          <pre><code class="python">>>> x = y = z = 0  # Zerar x, y, z
+>>> x
+0
+>>> y
+0
+>>> z
+0</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Criação de variáveis</h2>
+  <ul>
+      <li>
+          <h3>Variáveis precisam ser “definidas” (atribuídas um valor) antes que possam ser usadas, se não acontece um erro:</h3>
+          <pre><code class="python">>>> # tentar acessar variável não definida
+... n
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'n' is not defined</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Pontos flutuantes</h2>
+  <ul>
+      <li>
+          <h3>Há suporte completo para ponto flutuante (float); operadores com operandos de diferentes tipos convertem o inteiro para ponto flutuante:</h3>
+          <pre><code class="python">>>> 3 * 3.75 / 1.5
+7.5
+>>> 7.0 / 2
+3.5</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Números complexos</h2>
+  <ul>
+      <li>
+          <h3>Números complexos também são suportados; números imaginários são escritos com o sufixo j ou J. Números complexos com parte real não nula são escritos como (real+imagJ), ou podem ser criados pela chamada de função complex(real, imag).</h3>
+          <pre><code class="python">>>> 1j * 1J
+(-1+0j)
+>>> 1j * complex(0,1)
+(-1+0j)
+>>> 3+1j*3
+(3+3j)
+>>> (3+1j)*3
+(9+3j)
+>>> (1+2j)/(1+1j)
+(1.5+0.5j)</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Números complexos</h2>
+  <ul>
+      <li>
+          <h3>Números complexos são sempre representados por dois floats, a parte real e a parte imaginária. Para extrair as partes de um número complexo z, utilize z.real e z.imag.</h3>
+          <pre><code class="python">>>> a=1.5+0.5j
+>>> a.real
+1.5
+>>> a.imag
+0.5</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Funções de conversão</h2>
+  <ul>
+      <li>
+          <h3>As funções de conversão para float e inteiro (float(), int() e long()) não funcionam para números complexos — não existe apenas uma maneira de converter um número complexo para um número real. Use abs(z) para obter sua magnitude (como um float) ou z.real para obter sua parte real.</h3>
+          <pre><code class="python">>>> a=3.0+4.0j
+>>> float(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+TypeError: can't convert complex to float; use abs(z)
+>>> a.real
+3.0
+>>> a.imag
+4.0
+>>> abs(a)  # sqrt(a.real**2 + a.imag**2)
+5.0</code></pre>          
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">A variável _</h2>
+  <ul>
+      <li>
+          <h3>No modo interativo, o valor da última expressão exibida é atribuída a variável _. Assim, ao utilizar Python como uma calculadora, fica mais fácil prosseguir com os cálculos, por exemplo:</h3>
+          <pre><code class="python">>>> taxa = 12.5 / 100
+>>> preco = 100.50
+>>> preco * taxa
+12.5625
+>>> preco + _
+113.0625
+>>> round(_, 2)
+113.06</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings</h2>
+  <pre><code class="python">>>> 'spam eggs'
+'spam eggs'
+>>> 'doesn\'t'
+"doesn't"
+>>> "doesn't"
+"doesn't"
+>>> '"Yes," he said.'
+'"Yes," he said.'
+>>> "\"Yes,\" he said."
+'"Yes," he said.'
+>>> '"Isn\'t," she said.'
+'"Isn\'t," she said.'</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings multi-linha</h2>
+  <pre><code class="python">>>> oi = "Eis uma string longa contendo\n\
+... diversas linhas de texto assim como se faria em C.\n\
+...      Observe que os espaços em branco no inicio da linha são\
+...  significativos."
+>>> print oi
+Eis uma string longa contendo
+diversas linhas de texto assim como se faria em C.
+     Observe que os espaços em branco no inicio da linha são significativos.</code></pre>
+  <ul>
+      <li class="slide">
+          <h3>
+              <a href="http://docs.python.org/3.0/whatsnew/3.0.html#print-is-a-function" target="_blank">Atenção com a clausula print, ela muda no Python 3</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings multi-linha</h2>
+  <pre><code class="python">>>> print """
+... Uso: treco [OPCOES]
+...      -h                        Exibir esta mensagem de uso
+...      -H hostname               Host a conectar
+... """
+
+Uso: treco [OPCOES]
+     -h                        Exibir esta mensagem de uso
+     -H hostname               Host a conectar</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Raw texts - Texto cru</h2>
+  <pre><code class="python">>>> oi = r"Eis uma string longa contendo\n\
+... diversas linhas de texto assim como se faria em C."
+>>> print oi
+Eis uma string longa contendo\n\
+diversas linhas de texto assim como se faria em C.</code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Concatenação de Strings</h2>
+  <ul>
+      <li>
+          <h3>Strings podem ser concatenadas (coladas) com o operador +, e repetidas com *:</h3>
+          <pre><code class="python">>>> palavra = 'Ajuda' + 'Z'
+>>> palavra
+'AjudaZ'
+>>> '<' + palavra*5 + '>'
+'&lt;AjudaZAjudaZAjudaZAjudaZAjudaZ&gt;'</code></pre>          
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Concatenação de Strings</h2>
+  <ul>
+      <li>
+          <h3>Duas strings literais adjacentes são automaticamente concatenadas; a primeira linha do exemplo anterior poderia ter sido escrita como palavra = 'Ajuda' 'Z'; isso funciona somente com strings literais, não com expressões que produzem strings:</h3>
+          <pre><code class="python">>>> 'str' 'ing'             #  <-  Isto funciona
+'string'
+>>> 'str'.strip() + 'ing'   #  <-  Isto funciona
+'string'
+>>> 'str'.strip() 'ing'     #  <-  Isto é inválido
+  File "<stdin>", line 1, in ?
+    'str'.strip() 'ing'
+                      ^
+SyntaxError: invalid syntax</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Strings podem ser indexadas; como em C, o primeiro caractere da string tem índice 0 (zero). Não existe um tipo específico para caracteres; um caractere é simplesmente uma string de tamanho 1. Assim como na linguagem Icon, substrings podem ser especificadas através da notação de slice (fatiamento ou intervalo): dois índices separados por dois pontos.</h3>
+          <pre><code class="python">>>> palavra[4]
+'a'
+>>> palavra[0:2]
+'Aj'
+>>> palavra[2:4]
+'ud'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Índices de fatias têm defaults úteis; a omissão do primeiro índice equivale a zero, a omissão do segundo índice equivale ao tamanho da string sendo fatiada.:</h3>
+          <pre><code class="python">>>> palavra[:2]     # Os dois primeiros caracteres
+'Aj'
+>>> palavra[2:]     # Tudo menos os dois primeiros caracteres
+'udaZ'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Diferentemente de C, strings em Python não podem ser alteradas. Tentar atribuir valor a uma posição (índice ou fatia) dentro de uma string resulta em erro:</h3>
+          <pre><code class="python">>>> palavra[0] = 'x'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> palavra[:1] = 'Splat'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Entretanto, criar uma nova string combinando conteúdos é fácil e eficiente:</h3>
+          <pre><code class="python">>>> 'x' + palavra[1:]
+'xjudaZ'
+>>> 'Splat' + palavra[5]
+'SplatZ'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Eis uma invariante interessante das operações de fatiamento: s[:i] + s[i:] é igual a s.</h3>
+          <pre><code class="python">>>> palavra[:2] + palavra[2:]
+'AjudaZ'
+>>> palavra[:3] + palavra[3:]
+'AjudaZ'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Intervalos fora de limites são tratados “graciosamente” (N.d.T: o termo original “gracefully” indica robustez no tratamento de erros): um índice maior que o comprimento é trocado pelo comprimento, um limite superior menor que o limite inferior produz uma string vazia.</h3>
+          <pre><code class="python">>>> palavra[1:100]
+'judaZ'
+>>> palavra[10:]
+''
+>>> palavra[2:1]
+''</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Índices podem ser números negativos, para iniciar a contagem pela direita. Por exemplo:</h3>
+          <pre><code class="python">>>> palavra[-1]   # O último caractere
+'Z'
+>>> palavra[-2]   # O penúltimo caractere
+'a'
+>>> palavra[-2:]  # Os dois últimos caracteres
+'aZ'
+>>> palavra[:-2]  # Tudo menos os dois últimos caracteres
+'Ajud'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Observe que -0 é o mesmo que 0, logo neste caso não se conta a partir da direita!</h3>
+          <pre><code class="python">>>> palavra[-0]
+'A'</code></pre>
+      </li>
+  </ul>
+  
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li>
+          <h3>Intervalos fora dos limites da string são truncados, mas não tente isso com índices simples (que não sejam fatias):</h3>
+          <pre><code class="python">>>> palavra[-100:]
+'AjudaZ'
+>>> palavra[-100]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>></code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Slice</h2>
+  <ul>
+      <li class="slide">
+          <h3>Uma maneira de lembrar como slices funcionam é pensar que os índices indicam posições entre caracteres, onde a borda esquerda do primeiro caractere é 0. Assim, a borda direita do último caractere de uma string de comprimento n tem índice n, por exemplo:</h3>
+          <pre><code class="python"> 0   1   2   3   4   5   6
+ +---+---+---+---+---+---+
+ | A | j | u | d | a | Z |
+ +---+---+---+---+---+---+
+-6  -5  -4  -3  -2  -1</code></pre>
+      </li>
+      <li class="slide">
+          <h3>A primeira fileira de números indica a posição dos índices 0...6 na string; a segunda fileira indica a posição dos respectivos índices negativos. Uma fatia de i a j consiste em todos os caracteres entre as bordas i e j, respectivamente.</h3>
+      </li>
+      <li class="slide">
+          <h3>Para índices positivos, o comprimento da fatia é a diferença entre os índices, se ambos estão dentro dos limites da string. Por exemplo, comprimento de palavra[1:3] é 2.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tamanho da String</h2>
+  <ul>
+      <li>
+          <h3>A função built-in (embutida) len() devolve o comprimento de uma string:</h3>
+          <pre><code class="python">>>> s = 'anticonstitucionalissimamente'
+>>> len(s)
+29</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li>
+          <h3>Criar strings Unicode em Python é tão simples quanto criar strings normais:</h3>
+          <pre><code class="python">>>> u'Hello World !'
+u'Hello World !'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li class="slide">
+          <h3>O u antes das aspas indica a criação de uma string Unicode. Se você desejar incluir caracteres especiais na string, você pode fazê-lo através da codificação Unicode-Escape de Python. O exemplo a seguir mostra como:</h3>
+          <pre><code class="python">>>> u'Hello\u0020World !'
+u'Hello World !'</code></pre>
+      </li>
+      <li class="slide">
+          <h3>O código de escape \u0020 insere um caractere Unicode com valor ordinal 0x0020 (o espaço em branco) naquela posição.</h3>
+      </li>
+      <li class="slide">
+          <h3>Os outros caracteres são interpretados usando seus valores ordinais como valores ordinais em Unicode. Se você possui strings literais na codificação padrão Latin-1 que é usada na maioria dos países ocidentais, achará conveniente que os 256 caracteres inferiores do Unicode coincidem com os 256 caracteres do Latin-1.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li class="slide">
+          <h3>Para os experts, existe ainda um modo raw da mesma forma que existe para strings normais. Basta prefixar a string com ‘ur’ para usar a codificação Raw-Unicode-Escape. A conversão \uXXXX descrita acima será aplicada somente se houver um número ímpar de barras invertidas antes do escape ‘u’.</h3>
+          <pre><code class="python">>>> ur'Hello\u0020World !'
+u'Hello World !'
+>>> ur'Hello\\u0020World !'
+u'Hello\\\\u0020World !'</code></pre>
+      </li>
+      <li class="slide">
+          <h3>O modo raw (cru) é muito útil para evitar o excesso de barras invertidas, por exemplo, em expressões regulares.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li class="slide">
+          <h3>Além dessas codificações padrão, Python oferece todo um conjunto de maneiras de se criar strings Unicode a partir de alguma codificação conhecida.</h3>        
+      </li>
+      <li class="slide">
+          <h3>
+              <em>
+                  A função embutida unicode() dá acesso a todos os codecs Unicode registrados (COders e DECoders). Alguns dos codecs mais conhecidos são: Latin-1, ASCII, UTF-8, e UTF-16. Os dois últimos são codificações de tamanho variável para armazenar cada caractere Unicode em um ou mais bytes. (N.d.T: no Brasil, é muito útil o codec cp1252, variante estendida do Latin-1 usada na maioria das versões do MS Windows distribuídas no país, contendo caracteres comuns em textos, como aspas assimétricas “x” e ‘y’, travessão —, bullet • etc.).
+              </em>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3><a href="http://docs.python.org/3.0/whatsnew/3.0.html#text-vs-data-instead-of-unicode-vs-8-bit" target="_blank">Tudo isso muda no Python 3</a></h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li>
+          <h3>A codificação default é ASCII, que trata normalmente caracteres no intervalo de 0 a 127 mas rejeita qualquer outro com um erro. Quando uma string Unicode é exibida, escrita em arquivo ou convertida por str(), esta codificação padrão é utilizada.:</h3>
+          <pre><code class="python">>>> u"abc"
+u'abc'
+>>> str(u"abc")
+'abc'
+>>> u"äöü"
+u'\xe4\xf6\xfc'
+>>> str(u"äöü")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li>
+          <h3>Para converter uma string Unicode em uma string de 8-bits usando uma codificação específica, basta invocar o método encode() de objetos Unicode passando como parâmetro o nome da codificação destino. É preferível escrever nomes de codificação em letras minúsculas.</h3>
+          <pre><code class="python">>>> u"äöü".encode('utf-8')
+'\xc3\xa4\xc3\xb6\xc3\xbc'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Strings Unicode</h2>
+  <ul>
+      <li>
+          <h3>Se você tem um texto em uma codificação específica, e deseja produzir uma string Unicode a partir dele, pode usar a função unicode(), passando o nome da codificação de origem como segundo argumento.</h3>
+          <pre><code class="python">>>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
+u'\xe4\xf6\xfc'</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>Python inclui diversas estruturas de dados compostas, usadas para agrupar outros valores. A mais versátil é list (lista), que pode ser escrita como uma lista de valores (itens) separados por vírgula, entre colchetes. Os valores contidos na lista não precisam ser todos do mesmo tipo.</h3>
+          <pre><code class="python">>>> a = ['spam', 'eggs', 100, 1234]
+>>> a
+['spam', 'eggs', 100, 1234]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>Da mesma forma que índices de string, índices de lista começam em 0, listas também podem ser concatenadas, fatiadas e multiplicadas:</h3>
+          <pre><code class="python">>>> a[0]
+'spam'
+>>> a[3]
+1234
+>>> a[-2]
+100
+>>> a[1:-1]
+['eggs', 100]
+>>> a[:2] + ['bacon', 2*2]
+['spam', 'eggs', 'bacon', 4]
+>>> 3*a[:3] + ['Boo!']
+['spam', 'eggs', 100, 'spam', 'eggs', 100, 'spam', 'eggs', 100, 'Boo!']</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>Todas as operações de fatiamento devolvem uma nova lista contendo os elementos solicitados. Isto significa que o fatiamento a seguir retorna uma cópia rasa (shallow copy) da lista:</h3>
+          <pre><code class="python">>>> a[:]
+['spam', 'eggs', 100, 1234]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>Atribuição à fatias também é possível, e isso pode até alterar o tamanho da lista ou remover todos os itens dela:</h3>
+          <pre><code class="python">>>> # Substituir alguns itens:
+... a[0:2] = [1, 12]
+>>> a
+[1, 12, 123, 1234]
+>>> # Remover alguns:
+... a[0:2] = []
+>>> a
+[123, 1234]
+>>> # Inserir alguns:
+... a[1:1] = ['bletch', 'xyzzy']
+>>> a
+[123, 'bletch', 'xyzzy', 1234]
+>>> # Inserir uma cópia da própria lista no início
+>>> a[:0] = a
+>>> a
+[123, 'bletch', 'xyzzy', 1234, 123, 'bletch', 'xyzzy', 1234]
+>>> # Limpar a lista: substituir todos os items por uma lista vazia
+>>> a[:] = []
+>>> a
+[]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>A função embutida len() também se aplica a listas:</h3>
+          <pre><code class="python">>>> a = ['a', 'b', 'c', 'd']
+>>> len(a)
+4</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Listas</h2>
+  <ul>
+      <li>
+          <h3>É possível aninhar listas (criar listas contendo outras listas), por exemplo:</h3>
+          <pre><code class="python">>>> q = [2, 3]
+>>> p = [1, q, 4]
+>>> len(p)
+3
+>>> p[1]
+[2, 3]
+>>> p[1][0]
+2
+>>> p[1].append('xtra')     # Veja a seção 5.1
+>>> p
+[1, [2, 3, 'xtra'], 4]
+>>> q
+[2, 3, 'xtra']</code></pre>
+      </li>
+      <li class="slide">
+          <h3><em>Observe que no último exemplo, p[1] e q na verdade se referem ao mesmo objeto! Mais tarde retornaremos a semântica dos objetos.</em></h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Primeiros passos rumo à programação</h2>
+  <ul>
+      <li>
+          <h3>Naturalmente, podemos utilizar Python para tarefas mais complicadas do que somar 2+2. Por exemplo, podemos escrever o início da sequência de Fibonacci assim:</h3>
+          <div class="half">
+              <pre><code class="python">>>> # Sequência de Fibonacci:
+... # a soma de dois elementos define o próximo
+... a, b = 0, 1
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+...
+1
+1
+2
+3
+5
+8</code></pre>
+          </div>
+          <div class="half">
+              <h3 class="center slide">Este exemplo introduz diversas características ainda não mencionadas.</h3>
+              <ul>
+                  <li class="slide">
+                      <h3>
+                          <em>1) A primeira linha contém uma atribuição múltipla: as variáveis a e b recebem simultaneamente os novos valores 0 e 1. Na última linha há outro exemplo de atribuição múltipla demonstrando que expressões do lado direito são sempre avaliadas primeiro, antes da atribuição. As expressões do lado direito são avaliadas da esquerda para a direita.</em>
+                      </h3>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Primeiros passos rumo à programação</h2>
+  <ul>
+      <li>
+          <h3>Naturalmente, podemos utilizar Python para tarefas mais complicadas do que somar 2+2. Por exemplo, podemos escrever o início da sequência de Fibonacci assim:</h3>
+          <div class="half">
+              <pre><code class="python">>>> # Sequência de Fibonacci:
+... # a soma de dois elementos define o próximo
+... a, b = 0, 1
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+...
+1
+1
+2
+3
+5
+8</code></pre>
+          </div>
+          <div class="half">
+              <h3 class="center">Este exemplo introduz diversas características ainda não mencionadas.</h3>
+              <ul>
+                  <li class="slide">
+                      <h3>
+                          <em>2) O laço while executa enquanto a condição (aqui: b < 10) permanecer verdadeira. Em Python, como em C, qualquer valor não-zero é considerado verdadeiro, zero é considerado falso. A condição pode ser ainda uma lista ou string, na verdade qualquer sequência; qualquer coisa com comprimento maior que zero tem valor verdadeiro e sequências vazias são falsas. O teste utilizado no exemplo é uma comparação simples. Os operadores padrão para comparação são os mesmos de C: < (menor que), > (maior que), == (igual), <= (menor ou igual), >= (maior ou igual) e != (diferente).</em>
+                      </h3>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Primeiros passos rumo à programação</h2>
+  <ul>
+      <li>
+          <h3>Naturalmente, podemos utilizar Python para tarefas mais complicadas do que somar 2+2. Por exemplo, podemos escrever o início da sequência de Fibonacci assim:</h3>
+          <div class="half">
+              <pre><code class="python">>>> # Sequência de Fibonacci:
+... # a soma de dois elementos define o próximo
+... a, b = 0, 1
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+...
+1
+1
+2
+3
+5
+8</code></pre>
+          </div>
+          <div class="half">
+              <h3 class="center">Este exemplo introduz diversas características ainda não mencionadas.</h3>
+              <ul>
+                  <li class="slide">
+                      <h3>
+                          <em>3) O corpo do laço é indentado: indentação em Python é a maneira de agrupar comandos em blocos. No console interativo padrão você terá que digitar tab ou espaços para indentar cada linha. Na prática você vai preparar scripts Python mais complicados em um editor de texto; a maioria dos editores de texto tem facilidades de indentação automática. Quando um comando composto é digitado interativamente, deve ser finalizado por uma linha em branco (já que o parser não tem como adivinhar qual é a última linha do comando). Observe que toda linha de um mesmo bloco de comandos deve ter a mesma indentação</em>
+                      </h3>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Primeiros passos rumo à programação</h2>
+  <ul>
+      <li>
+          <h3>Naturalmente, podemos utilizar Python para tarefas mais complicadas do que somar 2+2. Por exemplo, podemos escrever o início da sequência de Fibonacci assim:</h3>
+          <div class="half">
+              <pre><code class="python">>>> # Sequência de Fibonacci:
+... # a soma de dois elementos define o próximo
+... a, b = 0, 1
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+...
+1
+1
+2
+3
+5
+8</code></pre>
+          </div>
+          <div class="half">
+              <h3 class="center">Este exemplo introduz diversas características ainda não mencionadas.</h3>
+              <ul>
+                  <li class="slide">
+                      <h3>
+                          <em>4) O comando print escreve o valor da expressão ou expressões fornecidas. É diferente de apenas escrever a expressão no interpretador (como fizemos nos exemplos da calculadora) pela forma como lida com múltiplas expressões e strings. Strings são exibidas sem aspas, e um espaço é inserido entre os itens para formatar o resultado assim:</em>
+                      </h3>
+                      <pre><code class="python">>>> i = 256*256
+>>> print 'O valor de i é', i
+O valor de i é 65536</code></pre>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Primeiros passos rumo à programação</h2>
+  <ul>
+      <li>
+          <h3>Naturalmente, podemos utilizar Python para tarefas mais complicadas do que somar 2+2. Por exemplo, podemos escrever o início da sequência de Fibonacci assim:</h3>
+          <div class="half">
+              <pre><code class="python">>>> # Sequência de Fibonacci:
+... # a soma de dois elementos define o próximo
+... a, b = 0, 1
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+...
+1
+1
+2
+3
+5
+8</code></pre>
+          </div>
+          <div class="half">
+              <h3 class="center">Este exemplo introduz diversas características ainda não mencionadas.</h3>
+              <ul>
+                  <li class="slide">
+                      <h3>
+                          <em>5) Uma vírgula ao final evita a quebra de linha:</em>
+                      </h3>
+                      <pre><code class="python">>>> a, b = 0, 1
+>>> while b < 1000:
+...     print b,
+...     a, b = b, a+b
+...
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</code></pre>
+                  </li>
+                  <li class="slide">
+                      <h3>
+                          <em>Note que o interpretador insere uma quebra de linha antes de imprimir o próximo prompt se a última linha não foi completada.</em>
+                      </h3>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando if</h2>
+  <ul>
+      <li>
+          <h3>Provavelmente o mais conhecido comando de controle de fluxo é o if. Por exemplo:</h3>
+          <pre><code class="python">>>> x = int(raw_input("Favor digitar um inteiro: "))
+Favor digitar um inteiro: 42
+>>> if x < 0:
+...      x = 0
+...      print 'Negativo alterado para zero'
+... elif x == 0:
+...      print 'Zero'
+... elif x == 1:
+...      print 'Unidade'
+... else:
+...      print 'Mais'
+...
+Mais</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Pode haver zero ou mais seções elif, e a seção else é opcional. A palavra-chave elif é uma abreviação para ‘else if’, e é útil para evitar indentação excessiva. Uma sequência if ... elif ... elif ... substitui as construções switch ou case existentes em outras linguagens.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando for</h2>
+  <ul>
+      <li>
+          <h3>O comando for em Python difere um tanto do que você talvez esteja acostumado em C ou Pascal. Ao invés de se iterar sobre progressões aritméticas (como em Pascal), ou dar ao usuário o poder de definir tanto o passo da iteração quanto a condição de parada (como em C), o comando for de Python itera sobre os itens de qualquer sequência (como uma lista ou uma string), na ordem em que eles aparecem na sequência. Por exemplo:</h3>
+          <pre><code class="python">>>> # Medir o tamanho de algumas strings:
+>>> a = ['gato', 'janela', 'defenestrar']
+>>> for x in a:
+...     print x, len(x)
+...
+gato 4
+janela 6
+defenestrar 11
+>>></code></pre>
+      </li>
+      <li class="slide">
+          <h3>Não é seguro modificar a sequência sobre a qual se baseia o laço de iteração (isto pode acontecer se a sequência for mutável, isto é, uma lista). Se você precisar modificar a lista sobre a qual está iterando (por exemplo, para duplicar itens selecionados), você deve iterar sobre uma cópia da lista ao invés da própria. A notação de fatiamento é bastante conveniente para isso:</h3>
+          <pre><code class="python">>>> for x in a[:]: # fazer uma cópia da lista inteira
+...    if len(x) > 6: a.insert(0, x)
+...
+>>> a
+['defenestrar', 'gato', 'janela', 'defenestrar']</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">A função range()</h2>
+  <ul>
+      <li>
+          <h3>Se você precisar iterar sobre sequências numéricas, a função embutida range() é a resposta. Ela gera listas contendo progressões aritméticas, por exemplo:</h3>
+          <pre><code class="python">>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>O ponto de parada fornecido nunca é incluído na lista; range(10) gera uma lista com 10 valores, exatamente os índices válidos para uma sequência de comprimento 10. É possível iniciar o intervalo em outro número, ou alterar a razão da progressão (inclusive com passo negativo):</h3>
+          <pre><code class="python">>>> range(5, 10)
+[5, 6, 7, 8, 9]
+>>> range(0, 10, 3)
+[0, 3, 6, 9]
+>>> range(-10, -100, -30)
+[-10, -40, -70]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">A função range()</h2>
+  <ul>
+      <li>
+          <h3>Para iterar sobre os índices de uma sequência, combine range() e len() da seguinte forma:</h3>
+          <pre><code class="python">>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print i, a[i]
+...
+0 Mary
+1 had
+2 a
+3 little
+4 lamb</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Na maioria dos casos como este, porém, é mais conveniente usar a função enumerate(), veja <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tut-loopidioms" target="_blank">Técnicas de iteração</a>.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comandos break e continue, e cláusulas else em laços</h2>
+  <ul>
+      <li>
+          <h3>O comando break, como em C, interrompe o laço for ou while mais interno.</h3>
+      </li>
+      <li class="slide">
+          <h3>O comando continue, também emprestado de C, avança para a próxima iteração do laço mais interno.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comandos break e continue, e cláusulas else em laços</h2>
+  <ul>
+      <li>
+          <h3>Laços podem ter uma cláusula else, que é executada sempre que o laço se encerra por exaustão da lista (no caso do for) ou quando a condição se torna falsa (no caso do while), mas nunca quando o laço é interrompido por um break. Isto é exemplificado no próximo exemplo que procura números primos:</h3>
+          <pre><code class="python">>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print n, '=', x, '*', n/x
+...             break
+...     else:
+...         # laço terminou sem encontrar um fator
+...         print n, 'é um número primo'
+...
+2 é um número primo
+3 é um número primo
+4 = 2 * 2
+5 é um número primo
+6 = 2 * 3
+7 é um número primo
+8 = 2 * 4
+9 = 3 * 3</code></pre>
+      </li>
+      <li class="slide">
+          <h3>(Sim, este é o código correto. Olhe atentamente: a cláusula else pertence ao laço for, e não ao comando if.)</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>O comando pass não faz nada. Ela pode ser usada quando a sintaxe exige um comando mas a semântica do programa não requer nenhuma ação. Por exemplo:</h3>
+          <pre><code class="python">>>> while True:
+...     pass  # esperar interrupção via teclado (Ctrl+C)
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>Isto é usado muitas vezes para se definir classes mínimas:</h3>
+          <pre><code class="python">>>> class MinhaClasseVazia:
+...     pass
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Comando pass</h2>
+  <ul>
+      <li>
+          <h3>Outra situação em que pass pode ser usado é para reservar o lugar de uma função ou de um bloco condicional, quando você está trabalhando em código novo, o que lhe possibilita continuar a raciocinar em um nível mais abstrato. O comando pass é ignorado silenciosamente:</h3>
+          <pre><code class="python">>>> def initlog(*args):
+...     pass   # Lembrar de implementar isto!
+...</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li class="slide">
+              <h3>A palavra reservada def inicia a definição de uma função. Ela deve ser seguida do nome da função e da lista de parâmetros formais entre parênteses. Os comandos que formam o corpo da função começam na linha seguinte e devem ser indentados.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Opcionalmente, a primeira linha lógica do corpo da função pode ser uma string literal, cujo propósito é documentar a função. Se presente, essa string chama-se docstring. (Há mais informação sobre docstrings na seção Strings de documentação.) Existem ferramentas que utilizam docstrings para produzir automaticamente documentação online ou para imprimir, ou ainda permitir que o usuário navegue interativamente pelo código. É uma boa prática incluir sempre docstrings em suas funções, portanto, tente fazer disto um hábito.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>A execução de uma função gera uma nova tabela de símbolos, usada para as variáveis locais da função. Mais precisamente, toda atribuição a variável dentro da função armazena o valor na tabela de símbolos local. Referências a variáveis são buscadas primeiramente na tabela local, então na tabela de símbolos global e finalmente na tabela de nomes embutidos (built-in). Portanto, não se pode atribuir diretamente um valor a uma variável global dentro de uma função (a menos que se utilize a declaração global antes), ainda que variáveis globais possam ser referenciadas livremente.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</h3>
+              <pre><code class="python">>>> def fib(n):    # escrever série de Fibonacci até n
+...     """Exibe série de Fibonacci até n"""
+...     a, b = 0, 1
+...     while a < n:
+...         print a,
+...         a, b = b, a+b
+...
+>>> # Agora invocamos a funçao que acabamos de definir:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Os parâmetros reais (argumentos) de uma chamada de função são introduzidos na tabela de símbolos local da função no momento da invocação, portanto, argumentos são passados por valor (onde o valor é sempre uma referência para objeto, não o valor do objeto). [1] Quando uma função invoca outra, uma nova tabela de símbolos é criada para tal chamada.</h3>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <ul>
+      <li>
+          <h3>Uma definição de função introduz o nome da função na tabela de símbolos atual. O valor associado ao nome da função tem um tipo que é reconhecido pelo interpretador como uma função definida pelo usuário. Esse valor pode ser atribuído a outros nomes que também podem ser usados como funções. Esse mecanismo serve para renomear funções:</h3>
+          <pre><code class="python">>>> fib
+<function fib at 10042ed0>
+>>> f = fib
+>>> f(100)
+0 1 1 2 3 5 8 13 21 34 55 89</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <ul>
+      <li>
+          <h3>Conhecendo outras linguagens, você pode questionar que fib não é uma função, mas um procedimento, pois ela não devolve um valor. Na verdade, mesmo funções que não usam o comando return devolvem um valor, ainda que pouco interessante. Esse valor é chamado None (é um nome embutido). O interpretador interativo evita escrever None quando ele é o único resultado de uma expressão. Mas se quiser vê-lo pode usar o comando print:</h3>
+          <pre><code class="python">>>> fib(0)
+>>> print fib(0)
+None</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <ul>
+      <li>
+          <h3>É fácil escrever uma função que devolve uma lista de números série de Fibonacci, ao invés de exibi-los:</h3>
+          <pre><code class="python">>>> def fib2(n): # devolve a série de Fibonacci até n
+...     """Devolve uma lista a com série de Fibonacci até n."""
+...     resultado = []
+...     a, b = 0, 1
+...     while a < n:
+...         resultado.append(a)    # veja mais adiante
+...         a, b = b, a+b
+...     return resultado
+...
+>>> f100 = fib2(100)    # executar
+>>> f100                # exibir o resultado
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Definindo Funções</h2>
+  <h3>Este exemplo, como sempre, demonstra algumas características novas:</h3>
+  <ul>
+      <li class="slide">
+          <h3>O comando return termina a função devolvendo um valor. Se não houver uma expressão após o return, o valor None é devolvido. Se a função chegar ao fim sem o uso explícito do return, então também será devolvido o valor None.</h3>
+      </li>
+      <li class="slide">
+          <h3>O trecho resultado.append(a) invoca um método do objeto lista resultado. Um método é uma função que “pertence” a um objeto e é chamada através de obj.nome_do_metodo onde obj é um objeto qualquer (pode ser uma expressão), e nome_do_metodo é o nome de um método que foi definido pelo tipo do objeto. Tipos diferentes definem métodos diferentes. Métodos de diferentes tipos podem ter o mesmo nome sem ambiguidade. (É possível definir seus próprios tipos de objetos e métodos, utilizando classes, veja em Classes) O método append() mostrado no exemplo é definido para objetos do tipo lista; ele adiciona um novo elemento ao final da lista. Neste exemplo, ele equivale a resultado = resultado + [a], só que mais eficiente.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>A mais útil das três é especificar um valor default para um ou mais parâmetros formais. Isso cria uma função que pode ser invocada com um número menor de argumentos do que ela pode receber. Por exemplo:</h3>
+              <pre><code class="python">def confirmar(pergunta, tentativas=4, reclamacao='Sim ou não, por favor!'):
+    while True:
+        ok = raw_input(pergunta).lower()
+        if ok in ('s', 'si', 'sim'):
+            return True
+        if ok in ('n', 'no', 'não', 'nananinanão'):
+            return False
+        tentativas = tentativas - 1
+        if tentativas == 0:
+            raise IOError('usuario nao quer cooperar')
+        print reclamacao</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <h3 class="slide">Essa função pode ser invocada de várias formas:</h3>
+      <ul>
+          <li class="slide">
+              <h3>fornecendo apenas o argumento obrigatório: confirmar('Deseja mesmo encerrar?')</h3>
+          </li>
+          <li class="slide">
+              <h3>fornecendo um dos argumentos opcionais: confirmar('Sobrescrever o arquivo?', 2)</h3>
+          </li>
+          <li class="slide">
+              <h3>ou fornecendo todos os argumentos: confirmar('Sobrescrever o arquivo?', 2, 'Escolha apenas s ou n')</h3>
+          </li>
+      </ul>
+      <h3 class="slide">Este exemplo também introduz o operador in, que verifica se uma sequência contém ou não um determinado valor.</h3>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <ul>
+      <li>
+          <h3>Os valores default são avaliados no momento a definição da função, e no escopo em que a função foi definida, portanto:</h3>
+          <pre><code class="python">i = 5
+
+def f(arg=i):
+    print arg
+
+i = 6
+f()</code></pre>
+      </li>
+      <li class="slide">
+          <h3>irá exibir 5.</h3>
+      </li>
+      <li class="slide">
+          <h3>Aviso importante: Valores default são avaliados apenas uma vez. Isso faz diferença quando o valor default é um objeto mutável como uma lista ou dicionário (N.d.T. dicionários são como arrays associativos ou HashMaps em outras linguagens; ver Dicionários).</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <div class="half">
+      <ul>
+          <li>
+              <h3>Por exemplo, a função a seguir acumula os argumentos passados em chamadas subsequentes:</h3>
+              <pre><code class="python">def f(a, L=[]):
+    L.append(a)
+    return L
+
+print f(1)
+print f(2)
+print f(3)</code></pre>
+          </li>
+      </ul>
+  </div>
+  <div class="half">
+      <ul>
+          <li class="slide">
+              <h3>Esse código vai exibir:</h3>
+              <pre><code class="python">[1]
+[1, 2]
+[1, 2, 3]</code></pre>
+          </li>
+      </ul>
+  </div>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Parâmetros com valores default</h2>
+  <ul>
+      <li>
+          <h3>Se você não quiser que o valor default seja compartilhado entre chamadas subsequentes, pode reescrever a função assim:</h3>
+          <pre><code class="python">def f(a, L=None):
+    if L is None:
+        L = []
+    L.append(a)
+    return L</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#listas-arbitrarias-de-argumentos" target="_blank">Listas arbitrárias de argumentos</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#desempacotando-listas-de-argumentos" target="_blank">Desempacotando listas de argumentos¶</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/controlflow.html#construcoes-lambda" target="_blank">Construções lambda</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#mais-sobre-listas" target="_blank">Mais sobre listas</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#usando-listas-como-pilhas" target="_blank">Usando listas como pilhas¶</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#usando-listas-como-filas" target="_blank">Usando listas como filas</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#ferramentas-de-programacao-funcional" target="_blank">Ferramentas de programação funcional</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Uma list comprehension é uma maneira concisa de construir uma lista preenchida. (N.d.T. literalmente, abrangência de lista mas no Brasil o termo em inglês é muito usado; também se usa a abreviação listcomp)</h3>
+      </li>
+      <li class="slide">
+          <h3>Um uso comum é construir uma nova lista onde cada elemento é o resultado de alguma expressão aplicada a cada membro de outra sequência ou iterável, ou para construir uma subsequência cujos elementos satisfazem uma certa condição.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Por exemplo, suponha que queremos criar uma lista de quadrados, assim:</h3>
+          <pre><code class="python">>>> quadrados = []
+>>> for x in range(10):
+...     quadrados.append(x**2)
+...
+>>> quadrados
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Podemos obter o mesmo resultado desta forma:</h3>
+          <pre><code class="python">quadrados = [x**2 for x in range(10)]</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">List comprehensions ou abrangências de listas</h2>
+  <ul>
+      <li>
+          <h3>Por exemplo, esta listcomp combina os elementos de duas listas quando eles são diferentes:</h3>
+          <pre><code class="python">>>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre>
+      </li>
+      <li class="slide">
+          <h3>Isto equivale a:</h3>
+          <pre><code class="python">>>> combs = []
+>>> for x in [1,2,3]:
+...     for y in [3,1,4]:
+...         if x != y:
+...             combs.append((x, y))
+...
+>>> combs
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#list-comprehensions-ou-abrangencias-de-listas" target="_blank">List comprehensions ou abrangências de listas</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#listcomps-aninhadas" target="_blank">Listcomps aninhadas</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#o-comando-del" target="_blank">O comando del</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tuplas-e-sequencias" target="_blank">Tuplas e sequências</a></h3>
+      </li>
+      <li>
+          <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#sets-conjuntos" target="_blank">Sets (conjuntos)</a></h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicionários</h2>
+  <ul>
+      <li>
+          <h3>Um bom modelo mental é imaginar um dicionário como um conjunto não ordenado de pares chave-valor, onde as chaves são únicas em uma dada instância do dicionário. Dicionários são delimitados por chaves: {}, e contém uma lista de pares chave:valor separada por vírgulas. Dessa forma também será exibido o conteúdo de um dicionário no console do Python. O dicionário vazio é {}.</h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicionários</h2>
+  <ul>
+      <li>
+          <h3>A seguir, um exemplo de uso do dicionário:</h3>
+          <pre><code class="python">>>> tel = {'jack': 4098, 'sape': 4139}
+>>> tel['guido'] = 4127
+>>> tel
+{'sape': 4139, 'guido': 4127, 'jack': 4098}
+>>> tel['jack']
+4098
+>>> del tel['sape']
+>>> tel['irv'] = 4127
+>>> tel
+{'guido': 4127, 'irv': 4127, 'jack': 4098}
+>>> tel.keys()
+['guido', 'irv', 'jack']
+>>> 'guido' in tel
+True</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#dicionarios" target="_blank">Dicionários</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Ao percorrer um dicionário em um laço, a variável de iteração receberá uma chave de cada vez:</h3>
+          <pre><code class="python">>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k in knights:
+...     print k
+...
+gallahad
+robin</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Quando conveniente, a chave e o valor correspondente podem ser obtidos simultaneamente com o método iteritems().</h3>
+          <pre><code class="python">>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> for k, v in knights.iteritems():
+...     print k, v
+...
+gallahad the pure
+robin the brave</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Ao percorrer uma sequência qualquer, o índice da posição atual e o valor correspondente podem ser obtidos simultaneamente usando a função enumerate():</h3>
+          <pre><code class="python">>>> for i, v in enumerate(['tic', 'tac', 'toe']):
+...     print i, v
+...
+0 tic
+1 tac
+2 toe</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Para percorrer uma sequência em ordem inversa, chame a função reversed() com a sequência na ordem original.</h3>
+          <pre><code class="python">>>> for i in reversed(xrange(1,10,2)):
+...     print i
+...
+9
+7
+5
+3
+1</code></pre>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Técnicas de iteração</h2>
+  <ul>
+      <li>
+          <h3>Para percorrer uma sequência de maneira ordenada, use a função sorted(), que retorna uma lista ordenada com os itens, mantendo a sequência original inalterada.</h3>
+          <pre><code class="python">>>> cesta = ['uva', 'laranja', 'uva', 'abacaxi', 'laranja', 'banana']
+>>> for fruta in sorted(cesta):
+...     print fruta
+...
+abacaxi
+banana
+laranja
+laranja
+uva
+uva
+>>> for fruta in sorted(set(cesta)):  # sem duplicações
+...     print fruta
+...
+abacaxi
+banana
+laranja
+uva
+>>></code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#tecnicas-de-iteracao" target="_blank">Técnicas de iteração</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos extras</h2>
+  <ul>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#mais-sobre-condicoes" target="_blank">Mais sobre condições</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/datastructures.html#comparando-sequencias-e-outros-tipos" target="_blank">Comparando sequências e outros tipos</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Módulos</h2>
+  <ul>
+      <li class="slide">
+          <h3>Exemplo SQLAlchemy</h3>
+      </li>
+      <li class="slide">
+          <pre><code class="python">import escola</code></pre>
+      </li>
+      <li class="slide">
+          <pre><code class="python">from escola import Aluno, Classe</code></pre>
+      </li>
+  </ul>
+  <h3 class="slide">Veja mais detalhes em <a href="http://turing.com.br/pydoc/2.7/tutorial/modules.html" target="_blank">Módulos</a></h3>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Tópicos NÃO tão extras :)</h2>
+  <ul>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/inputoutput.html" target="_blank">Entrada e saída</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/errors.html" target="_blank">Erros e exceções</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/classes.html" target="_blank">Classes</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/stdlib.html" target="_blank">Um breve passeio pela biblioteca padrão</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/stdlib2.html" target="_blank">Um breve passeio pela biblioteca padrão — parte II</a></h3>
+      </li>
+      <li>
+          <h3><a href="http://turing.com.br/pydoc/2.7/tutorial/whatnow.html" target="_blank">E agora?</a></h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicas</h2>
+  <h3 class="center">Banco de Dados - SQLAlchemy</h3>
+  <ul>
+      <li>
+          <h3>Crie o banco de dados no MySQL Workbench</h3>
+      </li>
+      <li>
+          <h3><a href="http://pypi.python.org/pypi/sqlacodegen/" target="_blank">Exporte as classes para acesso ao banco com SQLACodeGen</a></h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html" target="_blank">Tutorial do Mapeador Objeto Relacional</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicas</h2>
+  <h3 class="center">Desenvolvimento de Sites - Pyramid</h3>
+  <ul>
+      <li>
+          <h3><a href="http://docs.pylonsproject.org/projects/pyramid/en/1.4-branch/tutorials/wiki2/index.html" target="_blank">SQLAlchemy + URL Dispatch Wiki Tutorial</a></h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://docs.pylonsproject.org/projects/pyramid/en/1.4-branch/" target="_blank">Pyramid documentation 1.4</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicas</h2>
+  <h3 class="center">Aplicações Desktop - PySide</h3>
+  <ul>
+      <li>
+          <h3>
+              <a href="https://github.com/PySide/Examples" target="_blank">PySide Examples</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dicas</h2>
+  <h3 class="center">Tópicos avançados</h3>
+  <ul>
+      <li class="slide">
+          <h3>
+              <a href="http://www.rafekettler.com/magicmethods.html" target="_blank">A Guide to Python's Magic Methods</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              <a href="http://pythonhelp.wordpress.com/2013/03/11/os-metodos-magicos-de-python/" target="_blank">Os métodos mágicos de Python</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              <a href="http://www.ibm.com/developerworks/library/l-pyint/index.html" target="_blank">Guide to Python introspection</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              Design Patterns em Python
+              <a href="https://github.com/faif/python-patterns" target="_blank">1</a>
+              <a href="https://github.com/gennad/Design-Patterns-in-Python" target="_blank">2</a>
+              <a href="https://github.com/PROGRAM-IX/design-patterns" target="_blank">3</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              <a href="http://docs.python.org/2/library/itertools.html" target="_blank">Itertools — Functions creating iterators for efficient looping</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              <a href="http://wiki.python.org/moin/Generators" target="_blank">Generators</a>
+          </h3>
+      </li>
+      <li class="slide">
+          <h3>
+              <a href="http://wiki.python.org/moin/PythonDecoratorLibrary" target="_blank">PythonDecoratorLibrary</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Referências</h2>
+  <ul>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/material/appy/" target="_blank">Aprenda a Programar</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://turing.com.br/pydoc/2.7/tutorial/index.html" target="_blank">O tutorial de Python</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://www.async.com.br/projects/python/pnp/" target="_blank">Python na Prática: Um curso objetivo de programação em Python</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://docs.python.org/3.0/whatsnew/3.0.html" target="_blank">What’s New In Python 3.0</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://docs.python.org/3/howto/pyporting.html" target="_blank">Porting Python 2 Code to Python 3</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://en.wikipedia.org/wiki/Guido_van_Rossum" target="_blank">Wikipedia - Guido van Rossum</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python (programming language)</a>
+          </h3>
+      </li>
+      <li>
+          <h3>
+              <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java (programming language)</a>
+          </h3>
+      </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-python-64">Python</h2>
+  <h2 class="center">Dúvidas? Críticas? Sugestões?</h2>
+</section>
+
+
+<!-- End slides. -->
+
+
+<p class="deck-status">
+    <span class="deck-status-current"></span>
+    /
+    <span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Required Modernizr file -->
+<script src="modernizr.custom.js"></script>
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+    $(function() {
+        $.deck('.slide');
+    });
+</script>
+
+<!-- controldeck.js -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/controldeck-slides.js"></script>
+
+<!-- Highlight.js -->
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
