@@ -391,81 +391,150 @@ $ mv 4.3.x buildout.cfg</code></pre>
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center"></h2>
-            <ul>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-            </ul>
-            
+            <h2 class="center">Agora vamos aprender de um jeito mais fácil!</h2>
         </section>
 
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Referências</h2>
+            <h2 class="center">Utilizando Pythonbrew</h2>
+            <h3>Pythonbrew é um gerenciador de versões do Python que serve para automatizar tanto o processo de compilação do Python, quanto o processo de criação de ambientes virtuais.</h3>
             <ul>
-                <li>
-                    <h3>
-                        <a href="http://turing.com.br/material/appy/" target="_blank">Aprenda a Programar</a>
-                    </h3>
+                <li class="slide">
+                    <h3>Para instalar o Pythonbrew, siga as instruções do site: <a href="https://github.com/utahta/pythonbrew">https://github.com/utahta/pythonbrew</a></h3>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://turing.com.br/pydoc/2.7/tutorial/index.html" target="_blank">O tutorial de Python</a>
-                    </h3>
+                <li class="slide">
+                    <h3>Mas nós ja temos ele instalado em nosso ambiente! Vamos executar os passos anteriores com Pythonbrew agora.</h3>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://www.async.com.br/projects/python/pnp/" target="_blank">Python na Prática: Um curso objetivo de programação em Python</a>
-                    </h3>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Utilizando Pythonbrew</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Compilando Python 2.6.6</h3>
+                    <pre><code class="bash">$ pythonbrew install 2.6.6</code></pre>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://docs.python.org/3.0/whatsnew/3.0.html" target="_blank">What’s New In Python 3.0</a>
-                    </h3>
+                <li class="slide">
+                    <h3>Criando uma virtualenv</h3>
+                    <pre><code class="bash">$ pythonbrew venv create -p 2.6.6 -n py26</code></pre>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://docs.python.org/3/howto/pyporting.html" target="_blank">Porting Python 2 Code to Python 3</a>
-                    </h3>
+                <li class="slide">
+                    <h3>Ativando virtualenv</h3>
+                    <pre><code class="bash">$ pythonbrew venv use py26</code></pre>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://en.wikipedia.org/wiki/Guido_van_Rossum" target="_blank">Wikipedia - Guido van Rossum</a>
-                    </h3>
+                <li class="slide">
+                    <h3>Desativando virtualenv</h3>
+                    <pre><code class="bash">$ deactivate</code></pre>
                 </li>
-                <li>
-                    <h3>
-                        <a href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python (programming language)</a>
-                    </h3>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Utilizando Utilizando templer</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Criando estrutura básica do Plone com Templer</h3>
+                    <pre><code class="bash">$ templer plone_basic plone.basic
+
+plone_basic: A package for Plone add-ons
+
+This template creates a package for a basic Plone add-on project with
+a single namespace (like Products.PloneFormGen).
+
+To create a Plone project with a name like 'collective.geo.bundle'
+(2 dots, a 'nested namespace'), use the 'plone_nested' template.
+
+This template supports local commands.  These commands allow you to
+add Plone features to your new package.
+
+If you are trying to create a Plone *site* then the best place to
+start is with one of the Plone installers.  If you want to build
+your own Plone buildout, use one of the plone'N'_buildout templates
+
+
+If at any point, you need additional help for a question, you can enter
+'?' and press RETURN.
+
+Expert Mode? (What question mode would you like? (easy/expert/all)?) ['easy']: 
+Version (Version number for project) ['1.0']: 
+Description (One-line description of the project) ['']: Meu primeiro site plone
+Register Profile (Should this package register a GS Profile) [False]: 
+Robot Tests (Should the default robot test be included) [False]:</code></pre>
                 </li>
-                <li>
-                    <h3>
-                        <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java (programming language)</a>
-                    </h3>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Instalando Plone 4</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Entre na pasta criada</h3>
+                    <pre><code class="bash">$ cd plone.basic</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Rode o bootstrap.py (utilizando a virtualenv)</h3>
+                    <pre><code class="bash">$ python bootstrap.py</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Rode o Buildout</h3>
+                    <pre><code class="bash">$ ./bin/buildout</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Inicie o Plone</h3>
+                    <pre><code class="bash">$ ./bin/instance fg</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Acesse o endereço: <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></h3>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Quetal testar o plone site base dos sites governamentais?</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Baixe o portal.buildout</h3>
+                    <pre><code class="bash">$ git clone https://github.com/plonegovbr/portal.buildout.git</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Entre na pasta criada</h3>
+                    <pre><code class="bash">$ cd portal.buildout</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Aponte seu buildout para desenvolvimento</h3>
+                    <pre><code class="bash">$ ln -sf development.cfg buildout.cfg</code></pre>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Quetal testar o plone site base dos sites governamentais?</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Crie uma virtualenv para o portal</h3>
+                    <pre><code class="bash">$ pythonbrew venv create -n -p 2.7.3 portal.buildout
+$ pythonbrew venv use portal.buildout</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Os demais passos são os mesmos</h3>
+                    <pre><code class="bash">$ python bootstrap.py
+$ ./bin/buildout
+$ ./bin/instance fg</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Acesse o endereço: <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></h3>
                 </li>
             </ul>
         </section>
