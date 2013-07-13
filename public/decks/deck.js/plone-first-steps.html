@@ -138,18 +138,37 @@
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
             <h2 class="center">Instalando Python através do código fonte</h2>
+            <h3>Realize o download dos pacotes a seguir:</h3>
+            <ul>
+                <li><h3><a href="http://sourceforge.net/projects/freetype/files/freetype2/2.4.10/freetype-2.4.10.tar.gz/download" target="_blank">FreeType 2.4.10</a>.</h3></li>
+                <li><h3><a href="http://zlib.net/zlib-1.2.7.tar.gz" target="_blank">Zlib 1.2.7</a>.</h3></li>
+                <li><h3><a href="http://www.openssl.org/source/openssl-1.0.1c.tar.gz" target="_blank">OpenSSL 1.0.1c</a>.</h3></li>
+                <li><h3><a href="http://www.python.org/ftp/python/2.6.6/Python-2.6.6.tgz" target="_blank">Python 2.6.6</a>.</h3></li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Instalando Python através do código fonte</h2>
             <ul>
                 <li class="slide">
-                    <h3>Baixe a versão desejada do Python (no caso vamos <a href="http://python.org/download/releases/2.7.5/" target="_blank">baixar a 2.7.5</a>).</h3>
-                    <pre><code class="bash">$ wget http://python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2</code></pre>
+                    <h3>Compilar FreeType:</h3>
+                    <pre><code class="bash">$ tar -zxvf freetype-2.4.10.tar.gz
+$ cd freetype-2.4.10
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..</code></pre>
                 </li>
                 <li class="slide">
-                    <h3>Descompate o arquivo</h3>
-                    <pre><code class="bash">$ tar -jxvf Python-2.7.5.tar.bz2</code></pre>
-                </li>
-                <li class="slide">
-                    <h3>Entre no diretório criado</h3>
-                    <pre><code class="bash">$ cd Python-2.7.5</code></pre>
+                    <h3>Compilar Zlib:</h3>
+                    <pre><code class="bash">$ tar -zxvf zlib-1.2.7.tar.gz
+$ cd zlib-1.2.7
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..</code></pre>
                 </li>
             </ul>
         </section>
@@ -160,13 +179,22 @@
             <h2 class="center">Instalando Python através do código fonte</h2>
             <ul>
                 <li class="slide">
-                    <h3>Compile o Python</h3>
-                    <pre><code class="bash">$ ./configure</code></pre>
-                    <pre><code class="bash">$ make</code></pre>
+                    <h3>Compilar OpenSSL:</h3>
+                    <pre><code class="bash">$ tar -zxvf freetype-2.4.10.tar.gz
+$ cd freetype-2.4.10
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..</code></pre>
                 </li>
                 <li class="slide">
-                    <h3>Instale o Python sem substituir a versão atual (altinstall)</h3>
-                    <pre><code class="bash">$ make altinstall</code></pre>
+                    <h3>Compilar OpenSSL:</h3>
+                    <pre><code class="bash">$ tar -zxvf openssl-1.0.1c.tar.gz
+$ cd openssl-1.0.1c
+$ ./config
+$ make
+$ sudo make install
+$ cd ..</code></pre>
                 </li>
             </ul>
         </section>
@@ -177,106 +205,193 @@
             <h2 class="center">Instalando Python através do código fonte</h2>
             <ul>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Compilar Python:</h3>
+                    <pre><code class="bash">$ tar -zxvf Python-2.6.6.tgz
+$ cd Python-2.6.6
+$ ./configure
+$ make
+$ sudo make altinstall
+$ cd ..</code></pre>
                 </li>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Para testar o ambiente, entre no interpretador do Python:</h3>
+                    <pre><code class="bash">$ python2.6</code></pre>
                 </li>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>E execute os comandos:</h3>
+                    <pre><code class="python">>>> import zlib
+>>> from hashlib import md5
+>>> exit()</code></pre>
                 </li>
             </ul>
-            
         </section>
 
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Instalando Python através do código fonte</h2>
+            <h2 class="center">Configurando ambiente virtual (virtualenv)</h2>
+            <h3>Sempre que for criar um ambiente de desenvolvimento Python é recomendado criar um ambiente virtual separado para cada projeto. Dessa forma, conseguimos evitar conflitos entre diversos ambientes de desenvolvimento.</h3>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Configurando ambiente virtual (virtualenv)</h2>
             <ul>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Instalar VirtualEnv</h3>
+                    <pre><code class="bash">$ sudo apt-get install python-virtualenv</code></pre>
                 </li>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Criar ambiente virtual</h3>
+                    <pre><code class="bash">$ virtualenv -p python2.6 --no-site-packages ~/py26</code></pre>
                 </li>
             </ul>
-            
         </section>
 
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Instalando Python através do código fonte</h2>
+            <h2 class="center">Configurando ambiente virtual (virtualenv)</h2>
+            <ul>
+                <li>
+                    <h3>Observe que no comando do virtualenv, são passados alguns parâmetros, entre eles:</h3>
+                    <ul>
+                        <li><h3>-p <em>Indica qual versão do Python deve ser utilizada por padrão no ambiente virtual.</em></h3></li>
+                        <li><h3>--no-site-packages <em>Esta opção indica que o virtualenv deve ignorar o ambiente global do python e enxergar somente seu ambiente virtual.</em></h3></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Configurando ambiente virtual (virtualenv)</h2>
             <ul>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Ativando ambiente virtual</h3>
+                    <pre><code class="bash">$ source ~/py26/bin/activate</code></pre>
                 </li>
                 <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
-                </li>
-                <li class="slide">
-                    <h3></h3>
-                    <pre><code class="bash">
-                    </code></pre>
+                    <h3>Desativando ambiente virtual</h3>
+                    <pre><code class="bash">(py26)$ deactivate</code></pre>
                 </li>
             </ul>
-            
         </section>
 
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Instalando Python através do código fonte</h2>
+            <h2 class="center">Configurando SSH/GIT</h2>
+            <h3>Nos projetos Plone, normalmente é utilizado o controlador de versões GIT, hospedando os fontes no github.com.</h3>
+            <h3>Para configurar o ambiente para utilizar essa estrutura, é necessário criar uma chave RSA, cadastrar essa chave no Github, e clonar os projetos para seu computador.</h3>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Configurando SSH/GIT</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Criar chave RSA</h3>
+                    <pre><code class="bash">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Logo após esse comando, será solicitado uma frase chave. Normalmente essa frase não é informada, tecle enter 2 vezes.</h3>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Configurando SSH/GIT</h2>
+            <ul>
+                <li>
+                    <h3>Observe que no comando ssh-keygen, são passados alguns parâmetros, entre eles:</h3>
+                    <ul>
+                        <li><h3>-t <em>Indica qual o tipo de criptografia utilizada.</em></h3></li>
+                        <li><h3>-f <em>Indica o nome do arquivo que será criado.</em></h3></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Configurando SSH/GIT</h2>
+            <h3>Cadastrar chave no Github</h3>
+            <ul>
+                <li>
+                    <h3>Acesse as configurações do Github</h3>
+                </li>
+                <li>
+                    <h3>No menu vertical do lado direito, acesse a opção "SSH Keys"</h3>
+                </li>
+                <li>
+                    <h3>Abra o arquivo com a chave pública criada (<em>~/.ssh/id_rsa.pub</em>).</h3>
+                </li>
+                <li>
+                    <h3>Clique em "Add SSH key"</h3>
+                </li>
+                <li>
+                    <h3>Informe uma descrição para a chave adicionada no primeiro campo, e cole o conteúdo do arquivo <em>~/.ssh/id_rsa.pub</em> no segundo campo.</h3>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Instalando Plone 4</h2>
+            <h3>Depois de toda essa configuração, finalmente vamos instalar Plone no nosso computador!</h3>
+            <ul>
+                <li class="slide">
+                    <h3>Crie a pasta Plone:</h3>
+                    <pre><code class="bash">$ mkdir Plone
+$ cd Plone</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Baixe o bootstrap.py</h3>
+                    <pre><code class="bash">$ wget http://downloads.buildout.org/2/bootstrap.py</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Baixe o buildout do Plone 4.3.x</h3>
+                    <pre><code class="bash">$ wget https://raw.github.com/pythonpackages/buildout-plone/master/4.3.x
+$ mv 4.3.x buildout.cfg</code></pre>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Instalando Plone 4</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Rode o bootstrap.py (utilizando a virtualenv)</h3>
+                    <pre><code class="bash">$ python bootstrap.py</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Rode o Buildout</h3>
+                    <pre><code class="bash">$ ./bin/buildout</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Inicie o Plone</h3>
+                    <pre><code class="bash">$ ./bin/instance fg</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Acesse o endereço: <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></h3>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center"></h2>
             <ul>
                 <li class="slide">
                     <h3></h3>
