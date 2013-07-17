@@ -156,7 +156,7 @@
                     <h3>Compilar FreeType:</h3>
                     <pre><code class="bash">$ tar -zxvf freetype-2.4.10.tar.gz
 $ cd freetype-2.4.10
-$ ./configure
+$ ./configure --prefix=/usr
 $ make
 $ sudo make install
 $ cd ..</code></pre>
@@ -165,7 +165,7 @@ $ cd ..</code></pre>
                     <h3>Compilar Zlib:</h3>
                     <pre><code class="bash">$ tar -zxvf zlib-1.2.7.tar.gz
 $ cd zlib-1.2.7
-$ ./configure
+$ ./configure --prefix=/usr
 $ make
 $ sudo make install
 $ cd ..</code></pre>
@@ -180,18 +180,9 @@ $ cd ..</code></pre>
             <ul>
                 <li class="slide">
                     <h3>Compilar OpenSSL:</h3>
-                    <pre><code class="bash">$ tar -zxvf freetype-2.4.10.tar.gz
-$ cd freetype-2.4.10
-$ ./configure
-$ make
-$ sudo make install
-$ cd ..</code></pre>
-                </li>
-                <li class="slide">
-                    <h3>Compilar OpenSSL:</h3>
                     <pre><code class="bash">$ tar -zxvf openssl-1.0.1c.tar.gz
 $ cd openssl-1.0.1c
-$ ./config
+$ ./config --prefix=/usr
 $ make
 $ sudo make install
 $ cd ..</code></pre>
@@ -208,7 +199,9 @@ $ cd ..</code></pre>
                     <h3>Compilar Python:</h3>
                     <pre><code class="bash">$ tar -zxvf Python-2.6.6.tgz
 $ cd Python-2.6.6
-$ ./configure
+$ wget https://raw.github.com/saghul/pythonz/master/pythonz/patches/all/python26/patch-nosslv2.diff
+$ patch -p0 < patch-nosslv2.diff
+$ ./configure --prefix=/usr
 $ make
 $ sudo make altinstall
 $ cd ..</code></pre>
@@ -219,7 +212,8 @@ $ cd ..</code></pre>
                 </li>
                 <li class="slide">
                     <h3>E execute os comandos:</h3>
-                    <pre><code class="python">>>> import zlib
+                    <pre><code class="python">>>> import ssl
+>>> import zlib
 >>> from hashlib import md5
 >>> exit()</code></pre>
                 </li>
@@ -345,7 +339,7 @@ $ cd ..</code></pre>
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Instalando Plone 4</h2>
+            <h2 class="center">Instalando Plone 4.2.x pelos buildouts do Python Packages</h2>
             <h3>Depois de toda essa configuração, finalmente vamos instalar Plone no nosso computador!</h3>
             <ul>
                 <li class="slide">
@@ -354,13 +348,17 @@ $ cd ..</code></pre>
 $ cd Plone</code></pre>
                 </li>
                 <li class="slide">
-                    <h3>Baixe o bootstrap.py</h3>
-                    <pre><code class="bash">$ wget http://downloads.buildout.org/2/bootstrap.py</code></pre>
+                    <h3>Ative ambiente virtual</h3>
+                    <pre><code class="bash">$ source ~/py26/bin/activate</code></pre>
                 </li>
                 <li class="slide">
-                    <h3>Baixe o buildout do Plone 4.3.x</h3>
-                    <pre><code class="bash">$ wget https://raw.github.com/pythonpackages/buildout-plone/master/4.3.x
-$ mv 4.3.x buildout.cfg</code></pre>
+                    <h3>Baixe o bootstrap.py</h3>
+                    <pre><code class="bash">$ wget http://downloads.buildout.org/1/bootstrap.py</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Baixe o buildout do Plone 4.2.x</h3>
+                    <pre><code class="bash">$ wget https://raw.github.com/pythonpackages/buildout-plone/master/4.2.x
+$ mv 4.2.x buildout.cfg</code></pre>
                 </li>
             </ul>
         </section>
