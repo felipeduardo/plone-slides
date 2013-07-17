@@ -418,7 +418,7 @@ $ mv 4.2.x buildout.cfg</code></pre>
                 </li>
                 <li class="slide">
                     <h3>Adicione o patch para python 2.6.6</h3>
-                    <pre><code class="bash">$ cp patch-nosslv2.diff env/pythonbrew/patches/all/python26/patch-_ssl.c-for-ubuntu-oneiric-and-later.diff</code></pre>
+                    <pre><code class="bash">$ cp patch-nosslv2.diff env/pythonbrew/patches/all/python26</code></pre>
                     <ul>
                         <li class="slide">
                             <h3 class="slide">Edite instalador do pythonbrew e altere as linhas 130-139</h3>
@@ -441,15 +441,8 @@ $ mv 4.2.x buildout.cfg</code></pre>
                         <li class="slide">
                             <h3>Para:</h3>
                             <pre><code class="python">        elif is_python26(version):
-            if version < '2.6.6':
-                patch_dir = os.path.join(PATH_PATCHES_ALL, "python26")
-                if version < '2.6.3':
-                    self._add_patches_to_list(patch_dir, ['patch-Makefile.pre.in-for-2.6.2-and-earlier.diff'])
-                self._add_patches_to_list(patch_dir, ['patch-setup.py-for-2.6.5-and-earlier.diff'])
-            else:
-                patch_dir = os.path.join(PATH_PATCHES_ALL, "common")
-                self._add_patches_to_list(patch_dir, ['patch-setup.py.diff'])
-            self._add_patches_to_list(patch_dir, ['patch-_ssl.c-for-ubuntu-oneiric-and-later.diff'])</code></pre>
+            patch_dir = os.path.join(PATH_PATCHES_ALL, "python26")
+            self._add_patches_to_list(patch_dir, ['patch-nosslv2.diff'])</code></pre>
                         </li>
                     </ul>
                 </li>
