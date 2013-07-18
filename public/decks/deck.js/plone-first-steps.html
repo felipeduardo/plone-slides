@@ -370,7 +370,7 @@ $ mv 4.2.x buildout.cfg</code></pre>
             <ul>
                 <li class="slide">
                     <h3>Rode o bootstrap.py (utilizando a virtualenv)</h3>
-                    <pre><code class="bash">$ python bootstrap.py</code></pre>
+                    <pre><code class="bash">(py26)$ python bootstrap.py</code></pre>
                 </li>
                 <li class="slide">
                     <h3>Rode o Buildout</h3>
@@ -419,14 +419,22 @@ $ mv 4.2.x buildout.cfg</code></pre>
                 <li class="slide">
                     <h3>Adicione o patch para python 2.6.6</h3>
                     <pre><code class="bash">$ cp patch-nosslv2.diff env/pythonbrew/patches/all/python26</code></pre>
-                    <ul>
-                        <li class="slide">
-                            <h3 class="slide">Edite instalador do pythonbrew e altere as linhas 130-139</h3>
-                            <pre><code class="bash">subl env/pythonbrew/scripts/pythonbrew/installer/pythoninstaller.py</code></pre>
-                        </li>
-                        <li class="slide">
-                            <h3>De:</h3>
-                            <pre><code class="python">        elif is_python26(version):
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Utilizando Pythonbrew</h2>
+            <ul>
+                <li class="slide">
+                    <h3>Edite instalador do pythonbrew e altere as linhas 130-139</h3>
+                    <pre><code class="bash">$ emacs env/pythonbrew/scripts/pythonbrew/installer/pythoninstaller.py</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>De:</h3>
+                    <pre><code class="python">        elif is_python26(version):
             if version < '2.6.6':
                 patch_dir = os.path.join(PATH_PATCHES_ALL, "python26")
                 if version < '2.6.3':
@@ -435,17 +443,22 @@ $ mv 4.2.x buildout.cfg</code></pre>
                 self._add_patches_to_list(patch_dir, ['patch-_ssl.c-for-ubuntu-oneiric-and-later.diff'])
             else:
                 patch_dir = os.path.join(PATH_PATCHES_ALL, "common")
-                self._add_patches_to_list(patch_dir, ['patch-setup.py.diff'])
-                            </code></pre>
-                        </li>
-                        <li class="slide">
-                            <h3>Para:</h3>
-                            <pre><code class="python">        elif is_python26(version):
+                self._add_patches_to_list(patch_dir, ['patch-setup.py.diff'])</code></pre>
+                </li>
+                <li class="slide">
+                    <h3>Para:</h3>
+                    <pre><code class="python">        elif is_python26(version):
             patch_dir = os.path.join(PATH_PATCHES_ALL, "python26")
             self._add_patches_to_list(patch_dir, ['patch-nosslv2.diff'])</code></pre>
-                        </li>
-                    </ul>
                 </li>
+            </ul>
+        </section>
+
+
+        <section class="slide">
+            <h2 class="logo-plone-64">Plone</h2>
+            <h2 class="center">Utilizando Pythonbrew</h2>
+            <ul>
                 <li class="slide">
                     <h3>Compilando Python 2.6.6</h3>
                     <pre><code class="bash">$ pythonbrew install 2.6.6</code></pre>
@@ -460,7 +473,7 @@ $ mv 4.2.x buildout.cfg</code></pre>
                 </li>
                 <li class="slide">
                     <h3>Desativando virtualenv</h3>
-                    <pre><code class="bash">$ deactivate</code></pre>
+                    <pre><code class="bash">(py26)$ deactivate</code></pre>
                 </li>
             </ul>
         </section>
@@ -505,15 +518,20 @@ Robot Tests (Should the default robot test be included) [False]:</code></pre>
 
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
-            <h2 class="center">Instalando Plone 4</h2>
+            <h2 class="center">Instalando Plone 4 utilizando templer</h2>
             <ul>
                 <li class="slide">
                     <h3>Entre na pasta criada</h3>
                     <pre><code class="bash">$ cd plone.basic</code></pre>
                 </li>
                 <li class="slide">
+                    <h3>Atualize o bootstrap.py</h3>
+                    <pre><code class="bash">$ rm -f bootstrap.py
+$ wget http://downloads.buildout.org/1/bootstrap.py</code></pre>
+                </li>
+                <li class="slide">
                     <h3>Rode o bootstrap.py (utilizando a virtualenv)</h3>
-                    <pre><code class="bash">$ python bootstrap.py</code></pre>
+                    <pre><code class="bash">(py26)$ python bootstrap.py</code></pre>
                 </li>
                 <li class="slide">
                     <h3>Rode o Buildout</h3>
@@ -556,12 +574,15 @@ Robot Tests (Should the default robot test be included) [False]:</code></pre>
             <ul>
                 <li class="slide">
                     <h3>Crie uma virtualenv para o portal</h3>
-                    <pre><code class="bash">$ pythonbrew venv create -n -p 2.7.3 portal.buildout
+                    <pre><code class="bash">$ pythonbrew venv create -p 2.7.3 portal.buildout
 $ pythonbrew venv use portal.buildout</code></pre>
                 </li>
                 <li class="slide">
+                    <h3>Edite o arquivo <em>"buildout.d/sources.cfg"</em> e altere onde aparecer <em>"git@github.com:"</em> para <em>"https://github.com/"</em>.</h3>
+                </li>
+                <li class="slide">
                     <h3>Os demais passos são os mesmos</h3>
-                    <pre><code class="bash">$ python bootstrap.py
+                    <pre><code class="bash">(portal.buildout)$ python bootstrap.py
 $ ./bin/buildout
 $ ./bin/instance fg</code></pre>
                 </li>
@@ -575,6 +596,9 @@ $ ./bin/instance fg</code></pre>
         <section class="slide">
             <h2 class="logo-plone-64">Plone</h2>
             <h2 class="center">Dúvidas? Críticas? Sugestões?</h2>
+            <ul>
+                <li><h3>Envie um e-mail para o grupo!</h3></li>
+            </ul>
         </section>
 
 
