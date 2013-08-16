@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Introdução ao Plone</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme Plone. -->
+  <link rel="stylesheet" href="themes/style/plone.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<!-- #slide-0 -->
+<section class="slide">
+  <h1><img src="https://raw.github.com/felipeduardo/plone-slides/master/public/img/plone-logo-192.png" class="main-logo" alt="Logomarca do Plone - Três circulos da cor azul envolvidos por um circulo maior de borda azul" /></h1>
+</section>
+
+<!-- #slide-1 -->
+<section class="slide">
+  <div class="center">
+    <h1>Introdução ao CMS Plone</h1>
+    <h2>3º Café com Dev Londrina</h2>
+    <p>by Felipe Duardo <br/>
+    <a href="http://twitter.com/ofelipeduardo" class="twitter-follow-button" data-show-count="false" data-size="large">Seguir @ofelipeduardo</a><br/>
+    felipeduardo@gmail.com</p>
+  </div>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+<!-- #slide-2 -->
+<section class="slide">
+  <h2>Sobre mim</h2>
+  <ul>
+    <li class="slide">
+      <h3>Chapecoense</h3>
+    </li>
+    <li class="slide">
+      <h3>Espcialista web</h3>
+    </li>
+    <li class="slide">
+      <h3>Desenvolvedor da DESERTO Digital</h3>
+    </li>
+    <li class="slide"><h3>Passado</h3>
+      <ul>
+        <li class="slide"><h4>Back-end</h4></li>
+        <li class="slide"><h4>PHP</h4></li>
+        <li class="slide"><h4>Zend Framework</h4></li>
+        <li class="slide"><h4>Drupal</h4></li>
+        <li class="slide"><h4>Sencha Touch</h4></li>
+      </ul>
+    </li>
+    <li class="slide"><h3>Hoje</h3>
+      <ul>
+        <li class="slide"><h4>Front-end</h4></li>
+        <li class="slide"><h4>Plone Core Developer</h4></li>
+        <li class="slide"><h4>Aprendiz Python</h4></li>
+      </ul>
+    </li>
+    <li class="slide"><h3>Meus interesses</h3>
+      <ul>
+        <li class="slide"><h4>Front-end</h4></li>
+        <li class="slide"><h4>Ferramentas de automação</h4></li>
+        <li class="slide"><h4>Acessibilidade web</h4></li>
+        <li class="slide"><h4>Semântica</h4></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- #slide-2 -->
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>O que é o Plone?</h1>
+</section>
+
+
+<!-- #slide-3 -->
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>CMS</h1>
+</section>
+
+
+<!-- #slide-4 -->
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>Sistema de Gerenciamento de Conteúdo</h1>
+</section>
+
+
+<!-- #slide-5 -->
+<section class="slide">
+  <h2>Competição Entry-Level</h2>
+  <h1>
+    <ul class="list-logo-cms">
+      <li class="slide">
+        <img src="/img/logos/druplicon.png" class="logo-cms" alt="Logomarca do Drupal" />
+      </li>
+      <li class="slide">
+        <img src="/img/logos/wordpress.png" class="logo-cms" alt="Logomarca do Wordpress" />
+      </li>
+      <li class="slide">
+        <img src="/img/logos/joomla.png" class="logo-cms" alt="Logomarca do Joomla" />
+      </li>
+    </ul>
+  </h1>
+</section>
+
+
+<section class="slide">
+  <h2>Por que usar um CMS?</h2>
+  <ul>
+    <li class="slide">
+      <h3>Adaptar ao invés de construir do zero</h3>
+    </li>
+    <li class="slide">
+      <h3>Segue Padrões</h3>
+    </li>
+    <li class="slide">
+      <h3>Não é um desenvolvedor e sim uma comunidade</h3>
+    </li>
+    <li class="slide">
+      <h3>Velocidade na implementação</h3>
+    </li>
+    <li class="slide">
+      <h3>Interface segura</h3>
+    </li>
+    <li class="slide">
+      <h3>Documentação e manuais prontos</h3>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2>E o Plone?</h2>
+  <ul>
+    <li class="slide">
+      <h3>Python</h3>
+    </li>
+    <li class="slide">
+      <h3>Instaladores clicáveis (Mac, PC e UNIX)</h3>
+    </li>
+    <li class="slide">
+      <h3>Foco nos mantenedores de conteúdo e não nos técnicos</h3>
+    </li>
+    <li class="slide">
+      <h3>Preocupação com usabilidade e acessibilidade</h3>
+    </li>
+    <li class="slide">
+      <h3>Modelo de portal pronto para usar</h3>
+    </li>
+    <li class="slide">
+      <h3>Padrões W3C</h3>
+    </li>
+    <li class="slide">
+      <h3>Open Source</h3>
+    </li>
+    <li class="slide">
+      <h3>Altamente escalável</h3>
+    </li>
+    <li class="slide">
+      <h3>Comunidade Ativa</h3>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2>Qual o estado Plone?</h2>
+  <ul>
+    <li class="slide">
+      <h3>Atualmente na versão 4.3.1</h3>
+    </li>
+    <li class="slide">
+      <h3>717 Cores Developer (240 em 2012)</h3>
+    </li>
+    <li class="slide">
+      <h3>30 Cores Developer Brazucas! (+20 em 2012)</h3>
+    </li>
+    <li class="slide">
+      <h3>Traduzido para 40 idiomas</h3>
+    </li>
+    <li class="slide">
+      <h3>Mais de 1500 Produtos (Um por dia em 2012)</h3>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>E o desenvolvimento do Plone?</h1>
+</section>
+
+
+<section class="slide">
+  <h2>Desenvolvimento</h2>
+  <h3 class="center">Código fonte no GitHub</h3>
+  <img src="/img/logos/github.png" class="logo" alt="Logomarca do Github" />
+</section>
+
+
+<section class="slide">
+  <h2>Desenvolvimento</h2>
+  <h3 class="center">Time Especialista e maduro (UI, Framework, Segurança, Infra)</h3>
+  <img src="/img/plone-developers.png" class="logo" alt="Foto dos participantes da Plone Conference 2012" />
+</section>
+
+
+<section class="slide">
+  <h2>Desenvolvimento</h2>
+  <h1>Plone é <strong class="upcase">Totalmente</strong> testado</h1>
+</section>
+
+
+<section class="slide">
+  <h2>Desenvolvimento</h2>
+  <h3 class="center element-invisible">Jenkins CI</h3>
+  <a href="http://jenkins.plone.org/" target="_blank">
+  <img src="/img/logos/jenkins.png" class="logo" alt="Foto dos participantes da Plone Conference 2012" /></a>
+  <p class="center">É o servidor de integração contínua de código aberto, que oferece otimos plugins para apoiar a construção e teste de qualquer projeto.</p>
+</section>
+
+
+<section class="slide">
+  <h2>Desenvolvimento</h2>
+  <h3 class="center element-invisible">Travis CI</h3>
+  <a href="https://travis-ci.org/collective" target="_blank">
+  <img src="/img/logos/travis-ci.png" class="logo" alt="Foto dos participantes da Plone Conference 2012" /></a>
+  <p class="center">Travis CI é um serviço de integração contínua distribuído, usado para construir e testar projetos hospedados no GitHub.</p>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>O Plone é seguro?</h1>
+</section>
+
+
+<section class="slide">
+  <h2>Segurança</h2>
+  <h3 class="center">Gráfico de vunerabilidade entre CMS's</h3>
+  <img src="https://raw.github.com/felipeduardo/plone-slides/master/public/img/seguranca.png" alt="Gráfico de vunerabilidade entre CMS's">
+</section>
+
+
+<section class="slide">
+  <h2>Por que o Plone é tão seguro</h2>
+  <ul>
+    <li class="slide">
+      <h3 class="slide">1 - O Plone foi escrito sobre o Zope</h3>
+    </li>
+    <li class="slide">
+      <h3>2.1 - O Zope foi pensado desde o dia 0 para ter muita granularidade na questão de permissionamento</h3>
+    </li>
+    <li class="slide">
+      <h3>2.2 - Isto limita muito bem as permissões de cada usuário para o mínimo possível</h3>
+    </li>
+    <li class="slide">
+      <h3>3 - Zope usa o ZODB como base de dados.</h3>
+    </li>
+    <li class="slide">
+      <h3>4 - Zope é escrito em Python</h3>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>E a performance do Plone?</h1>
+</section>
+
+
+<section class="slide">
+  <h2>Performance</h2>
+  <h3 class="center">Gráfico sobre Performance</h3>
+  <img src="https://raw.github.com/felipeduardo/plone-slides/master/public/img/performance.jpg">
+</section>
+
+
+<section class="slide">
+  <h2>Performance</h2>
+  <h3 class="center">Plone no dia a dia</h3>
+  <iframe width="480" height="360" src="//www.youtube.com/embed/5HLj9M3fY_U" frameborder="0" allowfullscreen></iframe>
+  <p class="center">Fabio Rizzo em palestra na Python-Brasil (2012) sobre performance do Plone no dia a dia em grandes cases.</p>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>E quem usa?</h1>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h3 class="center">FBI</h3>
+  <a href="http://www.fbi.gov/">
+  <img src="/img/prints/ps-fbi.png" alt="Printscreen do site do FBI">
+  </a>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h3 class="center">CIA</h3>
+  <a href="http://www.fbi.gov/">
+  <img src="/img/prints/ps-cia.png" alt="Printscreen do site do FBI">
+  </a>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h3 class="center">Free Software Fundation</h3>
+  <a href="http://www.fsf.org">
+  <img src="/img/prints/ps-fsf.png" alt="Printscreen do site da Free Software Fundation">
+  </a>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h3 class="center">Amnesty International</h3>
+  <a href="http://www.amnesty.ch/en">
+  <img src="/img/prints/ps-ai.png" alt="Printscreen do site da Amnesty International">
+  </a>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h3 class="center">Sites Made in Plone</h3>
+  <a href="http://plone.org/support/sites">
+  <img src="/img/prints/ps-plone-sites.png" alt="Printscreen do site Plone.org com sites em Plone">
+  </a>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>Governo Federal</h1>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <ul>
+    <li class="slide">
+      <h3><a href="http://www2.planalto.gov.br">www2.planalto.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.brasil.gov.br">www.brasil.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.balancodegoverno.presidencia.gov.br/">www.balancodegoverno.presidencia.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://revista.brasil.gov.br/">revista.brasil.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.biblioteca.presidencia.gov.br/">www.biblioteca.presidencia.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.brasil.gov.br/crackepossivelvencer/">www.brasil.gov.br/crackepossivelvencer</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.secom.gov.br/">www.secom.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://www.emquestao.gov.br">www.emquestao.gov.br</a></h3>
+    </li>
+    <li class="slide">
+      <h3><a href="http://colab.interlegis.leg.br/wiki/CasasUsamPortalModelo">colab.interlegis.leg.br/wiki/CasasUsamPortalModelo</a></h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Plone Gov BR</h2>
+  <a href="http://plone.org/support/sites">
+  <img src="/img/logos/plonegovbr-peq.png" alt="Printscreen do site Plone.org com sites em Plone">
+  </a>
+</section>
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1>As verdades sobre o Plone!</h1>
+</section>
+
+
+<section class="slide">
+  <h2>As verdades sobre o Plone!</h2>
+  <h3 class="center">É facil trabalhar com Plone?</h3>
+  <iframe width="560" height="315" src="//www.youtube.com/embed/vh2jxprKr2Y" frameborder="0" allowfullscreen></iframe>
+</section>
+
+
+<section class="slide">
+  <h2>As verdades sobre o Plone!</h2>
+  <ul>
+    <li class="slide">
+      <h3>A curva de aprendizagem Alta</h3>
+    </li>
+    <li class="slide">
+      <h3>Pouca documentação em português</h3>
+    </li>
+    <li class="slide">
+      <h3>A instalação e configuração da ferramenta é complicada</h3>
+    </li>
+    <li class="slide">
+      <h3>Requer uma configuração de hospedagem personalizada</h3>
+    </li>
+    <li class="slide">
+      <h3>O núcleo (core) é considerado o maior e mais pesado entre os CMS</h3>
+    </li>
+  </ul>
+</section>
+
+
+<section class="slide">
+  <h2>As verdades sobre o Plone!</h2>
+  <h1 class="center">Plone paga bem!</h1>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1 class="center">Duvidas</h1>
+</section>
+
+
+<section class="slide">
+  <h2 class="logo-plone-64">Plone</h2>
+  <h1 class="center">Obrigado!</h1>
+</section>
+
+<!-- End slides. -->
+
+
+<p class="deck-status">
+    <span class="deck-status-current"></span>
+    /
+    <span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+    $(function() {
+        $.deck('.slide');
+    });
+</script>
+
+<!-- controldeck.js -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/controldeck-slides.js"></script>
+
+</body>
+</html>
